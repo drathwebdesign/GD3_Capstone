@@ -24,7 +24,6 @@ public class HeadBobController : MonoBehaviour
 
         CheckMotion();
         ResetPosition();
-        _camera.LookAt(FocusTarget());
     }
     private void PlayMotion(Vector3 motion)
     {
