@@ -726,6 +726,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 3330337048824373707, guid: fee41c8921faefe4c8c8022020176eb6, type: 3}
+      propertyPath: m_Cookie
+      value: 
+      objectReference: {fileID: 2800000, guid: 66dbca3e7460afa4fbc558b4f2bbaf68, type: 3}
+    - target: {fileID: 3330337048824373707, guid: fee41c8921faefe4c8c8022020176eb6, type: 3}
+      propertyPath: m_SpotAngle
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330337048824373707, guid: fee41c8921faefe4c8c8022020176eb6, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4432105626649392221, guid: fee41c8921faefe4c8c8022020176eb6, type: 3}
       propertyPath: CameraTransform
       value: 
