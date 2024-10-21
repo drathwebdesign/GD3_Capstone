@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7039611820462356658}
   - component: {fileID: 1462866497625945922}
   - component: {fileID: 5061075995814826845}
+  - component: {fileID: 376091823736120570}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -157,8 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e3dc0a05bba6247bb41a5c9ed0d77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpHeight: 0.01
+  walkSpeed: 5
+  sprintSpeed: 7
+  jumpHeight: 2
   gravity: -9.81
   gravityMultiplier: 2
   groundDistance: 0.1
@@ -166,3 +168,20 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &376091823736120570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6084424999274275994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a497060c66928f4dbeed12d38e166c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enable: 1
+  amplitude: 0.003
+  frequency: 10.5
+  _camera: {fileID: 0}
+  cameraHolder: {fileID: 0}

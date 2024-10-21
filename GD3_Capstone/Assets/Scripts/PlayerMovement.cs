@@ -15,9 +15,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Grounded")]
     [SerializeField] float groundDistance = 0.2f;
-    [SerializeField] bool isGrounded = false;
+    [SerializeField] public bool isGrounded = false;
     [SerializeField] LayerMask ground;
 
+    Vector3 move;
     Vector3 velocity;
     private float currentSpeed;
 
@@ -45,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * horizontal + transform.forward * vertical;
+        move = transform.right * horizontal + transform.forward * vertical;
 
         characterController.Move(move.normalized * currentSpeed * Time.deltaTime);
        
@@ -76,5 +77,9 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
         else
             isGrounded = false;
+    }
+    public Vector3 GetMovementVector()
+    {
+        return move;
     }
 }
