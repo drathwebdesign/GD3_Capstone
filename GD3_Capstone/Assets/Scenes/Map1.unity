@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: c292a97ca5b44af428ac393c78fd8b14, type: 3}
       propertyPath: m_Name
-      value: WaterPlane 2
+      value: WaterPlane
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c292a97ca5b44af428ac393c78fd8b14, type: 3}
       propertyPath: m_Layer
@@ -508,6 +508,7 @@ Transform:
   - {fileID: 223055973}
   - {fileID: 594515552}
   - {fileID: 292015693}
+  - {fileID: 1024025181}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1024025180
@@ -516,7 +517,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 842947987}
     m_Modifications:
     - target: {fileID: 5172373356302053013, guid: c066b29df5f9ef946b52720de30ea877, type: 3}
       propertyPath: m_LocalPosition.x
@@ -536,7 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5172373356302053013, guid: c066b29df5f9ef946b52720de30ea877, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5172373356302053013, guid: c066b29df5f9ef946b52720de30ea877, type: 3}
       propertyPath: m_LocalRotation.y
@@ -544,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5172373356302053013, guid: c066b29df5f9ef946b52720de30ea877, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5172373356302053013, guid: c066b29df5f9ef946b52720de30ea877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1111,4 +1112,3 @@ SceneRoots:
   - {fileID: 842947987}
   - {fileID: 1780305047}
   - {fileID: 1971416947}
-  - {fileID: 1024025180}
