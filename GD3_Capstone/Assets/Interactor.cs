@@ -23,6 +23,8 @@ public class Interactor : MonoBehaviour
 
                 objectInHands.transform.GetComponent<Rigidbody>().isKinematic = true;
                 objectInHands.transform.gameObject.SetActive(false);
+
+                //add item to inventory
             }
         }
     }
