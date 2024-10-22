@@ -144,12 +144,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headBobController: {fileID: 376091823736120570}
   playerAudioSource: {fileID: 3642575512665732854}
-  footstepSounds:
+  dirtFootStepsArray:
   - {fileID: 8300000, guid: d804fe203a3bcd44b9ce0c38c1dee17a, type: 3}
   - {fileID: 8300000, guid: 729dda68891e649468b991f3df341472, type: 3}
   - {fileID: 8300000, guid: 5a1c6c5b14790c74aa9c4c8249994ccd, type: 3}
   - {fileID: 8300000, guid: 9620cfc92f117724fab25ac085029783, type: 3}
   - {fileID: 8300000, guid: ec18d3d6234d56340aab69ffc727f264, type: 3}
+  - {fileID: 8300000, guid: 800f286f58c7ef941acb5629211abe0e, type: 3}
 --- !u!1 &795234956490175583
 GameObject:
   m_ObjectHideFlags: 0
