@@ -4,8 +4,10 @@ public class HeadBobController : MonoBehaviour
 {
     [SerializeField] private bool _enable = true;
 
-    [SerializeField, Range(0, 0.1f)] private float amplitude = 0.015f;
-    [SerializeField, Range(0, 30)] private float frequency = 10.0f;
+    [SerializeField, Range(0, 0.1f)] private float walkAmplitude = 0.0015f;
+    [SerializeField, Range(0, 30)] private float walkFrequency = 10.0f;
+    [SerializeField, Range(0, 0.1f)] private float sprintAmplitude = 0.015f;
+    [SerializeField, Range(0, 30)] private float sprintFrequency = 10.0f;
 
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Transform cameraHolder = null;
@@ -13,6 +15,9 @@ public class HeadBobController : MonoBehaviour
     private float toggleSpeed = 0.1f;
     private Vector3 startPos;
     private PlayerMovement controller;
+
+    private float amplitude;
+    private float frequency;
     void Start()
     {
         controller = GetComponent<PlayerMovement>();
@@ -21,6 +26,16 @@ public class HeadBobController : MonoBehaviour
     void Update()
     {
         if (!_enable) return;
+        if (controller.isSprinting)
+        {
+            amplitude = sprintAmplitude;
+            frequency = sprintFrequency;
+        }
+        else
+        {
+            amplitude = walkAmplitude;
+            frequency = walkFrequency;
+        }
 
         CheckMotion();
         ResetPosition();

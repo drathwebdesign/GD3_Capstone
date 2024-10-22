@@ -18,15 +18,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public bool isGrounded = false;
     [SerializeField] LayerMask ground;
 
+    [Header("Bools")]
+    public bool isSprinting { get; private set;}
+
     Vector3 move;
     Vector3 velocity;
     private float currentSpeed;
 
     void Start()
     {
+        //setup references and variables
         characterController = GetComponent<CharacterController>();
-
+        
+        isSprinting = false;
         currentSpeed = walkSpeed;
+
         //multiply gravity by multiplier
         gravity *= gravityMultiplier;
     }
@@ -55,9 +61,15 @@ public class PlayerMovement : MonoBehaviour
     private void OnSprint()
     {
         if (Input.GetKey(KeyCode.LeftShift))
+        {
             currentSpeed = sprintSpeed;
+            isSprinting = true;
+        }
         else
+        {
             currentSpeed = walkSpeed;
+            isSprinting = false;
+        }
     }
     private void OnJump()
     {

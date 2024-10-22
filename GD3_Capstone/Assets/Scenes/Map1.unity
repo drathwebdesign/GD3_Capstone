@@ -778,9 +778,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1506036759}
     - target: {fileID: 376091823736120570, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: amplitude
+      value: 0.0015
+      objectReference: {fileID: 0}
+    - target: {fileID: 376091823736120570, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: cameraHolder
       value: 
       objectReference: {fileID: 1506036758}
+    - target: {fileID: 376091823736120570, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: sprintAmplitude
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 376091823736120570, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: sprintFrequency
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6084424999274275994, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_Name
       value: Player

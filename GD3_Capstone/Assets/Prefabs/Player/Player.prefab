@@ -181,7 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enable: 1
-  amplitude: 0.0018
-  frequency: 10.5
+  walkAmplitude: 0.0015
+  walkFrequency: 10
+  sprintAmplitude: 0.002
+  sprintFrequency: 15
   _camera: {fileID: 0}
   cameraHolder: {fileID: 0}
