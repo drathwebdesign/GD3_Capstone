@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class HeadBobController : MonoBehaviour
 {
     [SerializeField] private bool _enable = true;
@@ -11,10 +11,10 @@ public class HeadBobController : MonoBehaviour
 
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Transform cameraHolder = null;
+    [HideInInspector] public PlayerMovement controller;
 
     private float toggleSpeed = 0.1f;
     private Vector3 startPos;
-    private PlayerMovement controller;
 
     private float amplitude;
     private float frequency;
@@ -26,6 +26,7 @@ public class HeadBobController : MonoBehaviour
     void Update()
     {
         if (!_enable) return;
+        //change amplitude and frequency based on player speed
         if (controller.isSprinting)
         {
             amplitude = sprintAmplitude;
@@ -70,5 +71,9 @@ public class HeadBobController : MonoBehaviour
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + cameraHolder.localPosition.y, transform.position.z);
         pos += cameraHolder.forward * 15f;
         return pos;
+    }
+    public Transform GetCameraTransform()
+    {
+        return _camera;
     }
 }
