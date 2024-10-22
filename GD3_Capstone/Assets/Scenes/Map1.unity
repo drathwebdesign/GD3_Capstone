@@ -729,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 229.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.y
@@ -737,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 181.79
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalRotation.w
@@ -828,7 +828,7 @@ MonoBehaviour:
   largeBand1FadeToggle: 1
   ripplesFadeToggle: 1
   surfaceType: 0
-  geometryType: 0
+  geometryType: 3
   meshRenderers: []
   timeMultiplier: 1
   scriptInteractions: 1
@@ -951,7 +951,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   repetitionSize: 500
   largeOrientationValue: 0
-  largeWindSpeed: 30
+  largeWindSpeed: 0
   largeChaos: 0.85
   largeBand0Multiplier: 1
   largeBand0FadeMode: 1
@@ -964,7 +964,7 @@ MonoBehaviour:
   ripples: 1
   ripplesMotionMode: 0
   ripplesOrientationValue: 0
-  ripplesWindSpeed: 8
+  ripplesWindSpeed: 5
   ripplesChaos: 0.8
   ripplesFadeMode: 1
   ripplesFadeStart: 50
