@@ -5,7 +5,8 @@ using UnityEngine;
 public class SoundFXManager : MonoBehaviour {
     public static SoundFXManager Instance;
 
-    [SerializeField] private AudioSource soundFXObject;
+    // Array to hold different AudioSource prefabs
+    [SerializeField] private AudioSource[] soundFXObjects;
 
     void Awake() {
         if (Instance == null) {
@@ -13,51 +14,60 @@ public class SoundFXManager : MonoBehaviour {
         }
     }
 
-    void Update() {
-    }
+    // Method that plays a sound using a specific soundFXObject prefab selected by index
+    public void PlaySoundFXClip(int soundFXIndex, AudioClip audioClip, Transform spawnTransform, float volume) {
+        // Ensure the index is within the bounds of the array
+        if (soundFXIndex < 0 || soundFXIndex >= soundFXObjects.Length) {
+            Debug.LogError("SoundFX index out of bounds!");
+            return;
+        }
 
-    public void PlaySoundFXClip(AudioClip audioClip, Transform spawnTransform, float volume) {
+        // Select the soundFX prefab based on the index
+        AudioSource audioSourcePrefab = soundFXObjects[soundFXIndex];
 
-        //spawn in                                                                  quaternion since we dont care about rotation
-        AudioSource audioSource = Instantiate(soundFXObject, spawnTransform.position, Quaternion.identity);
+        // Spawn the AudioSource prefab
+        AudioSource audioSource = Instantiate(audioSourcePrefab, spawnTransform.position, Quaternion.identity);
 
-        //assign the auidoClip
+        // Assign the audio clip
         audioSource.clip = audioClip;
 
-        //assign volume
+        // Assign volume
         audioSource.volume = volume;
 
-        //play sound
+        // Play the sound
         audioSource.Play();
 
-        //get length of sound FX clip
-        float clipLength = audioSource.clip.length;
-
-        //destroy the clip after it is done playing
-        Destroy(audioSource.gameObject, clipLength);
+        // Destroy the sound object after the clip finishes playing
+        Destroy(audioSource.gameObject, audioSource.clip.length);
     }
 
-    public void PlayRandomSoundFXClip(AudioClip[] audioClip, Transform spawnTransform, float volume) {
+    // Overloaded method to handle an array of AudioClips (randomly selects one) and play the specified soundFXObject prefab by index
+    public void PlayRandomSoundFXClip(int soundFXIndex, AudioClip[] audioClips, Transform spawnTransform, float volume) {
+        // Ensure the index is within bounds
+        if (soundFXIndex < 0 || soundFXIndex >= soundFXObjects.Length) {
+            Debug.LogError("SoundFX index out of bounds!");
+            return;
+        }
 
-        //Assign random index
-        int random = Random.Range(0, audioClip.Length);
+        // Select the soundFX prefab based on the index
+        AudioSource audioSourcePrefab = soundFXObjects[soundFXIndex];
 
-        //spawn in                                                                  quaternion since we dont care about rotation
-        AudioSource audioSource = Instantiate(soundFXObject, spawnTransform.position, Quaternion.identity);
+        // Randomly select a clip
+        int random = Random.Range(0, audioClips.Length);
 
-        //assign the auidoClip from random index
-        audioSource.clip = audioClip[random];
+        // Spawn the AudioSource prefab
+        AudioSource audioSource = Instantiate(audioSourcePrefab, spawnTransform.position, Quaternion.identity);
 
-        //assign volume
+        // Assign random audio clip
+        audioSource.clip = audioClips[random];
+
+        // Assign volume
         audioSource.volume = volume;
 
-        //play sound
+        // Play the sound
         audioSource.Play();
 
-        //get length of sound FX clip
-        float clipLength = audioSource.clip.length;
-
-        //destroy the clip after it is done playing
-        Destroy(audioSource.gameObject, clipLength);
+        // Destroy after the clip finishes playing
+        Destroy(audioSource.gameObject, audioSource.clip.length);
     }
 }
