@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CrawlerAI : MonoBehaviour {
     [SerializeField] AudioClip[] roarSoundClips;
+    //[SerializeField] AudioClip roarSoundClip;
     private float cooldownTime = 5f;  // Time in seconds between sounds
     private float timeSinceLastRoar = 0f;  // Tracks time since the last sound was played
 
@@ -16,5 +17,6 @@ public class CrawlerAI : MonoBehaviour {
             SoundFXManager.Instance.PlayRandomSoundFXClip(0, roarSoundClips, transform, 1f);
             timeSinceLastRoar = 0f;  // Reset the timer
         }
+        //SoundFXManager.Instance.PlaySoundFXClip(1, roarSoundClip, transform, 1f);
     }
 }
