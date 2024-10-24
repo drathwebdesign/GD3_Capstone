@@ -28,6 +28,7 @@ public class FieldOfView : MonoBehaviour
     }
     private void FindVisibleTargets()
     {
+        visibleTargets.Clear();
         Collider[] targetsInRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
         for (int i = 0; i < targetsInRadius.Length; i++)
@@ -44,14 +45,8 @@ public class FieldOfView : MonoBehaviour
                     ////CAN SEE TARGET
                     //add target to visible targets array
                     visibleTargets.Add(target);
-
                 }
-                else
-                    visibleTargets.Remove(target);
-
             }
-            else
-                visibleTargets.Remove(target);
         }
     }
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
