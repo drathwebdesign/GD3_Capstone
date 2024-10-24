@@ -1,4 +1,5 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -19,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask ground;
 
     [Header("Bools")]
-    public bool isSprinting { get; private set;}
-
+    public bool isSprinting { get; private set; }
+    
     Vector3 move;
     Vector3 velocity;
     private float currentSpeed;
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //setup references and variables
         characterController = GetComponent<CharacterController>();
-        
+
         isSprinting = false;
         currentSpeed = walkSpeed;
 
@@ -46,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
         OnSprint();
         OnMove();
     }
-
     private void OnMove()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         move = transform.right * horizontal + transform.forward * vertical;
 
         characterController.Move(move.normalized * currentSpeed * Time.deltaTime);
-       
+
         characterController.Move(velocity * Time.deltaTime);
     }
     private void OnSprint()

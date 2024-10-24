@@ -308,12 +308,12 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: 36dd385e759c96147b6463dcd1149c11, type: 2}
-    terrainQualityOverrides: 0
+    terrainQualityOverrides: 30
     terrainPixelError: 1
-    terrainDetailDensityScale: 1
-    terrainBasemapDistance: 1000
+    terrainDetailDensityScale: 0.5
+    terrainBasemapDistance: 500
     terrainDetailDistance: 80
-    terrainTreeDistance: 5000
+    terrainTreeDistance: 1000
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
