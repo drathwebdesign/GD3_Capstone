@@ -18543,15 +18543,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8292b5973bdb6a49bcd4ada79659eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mannequinHouseUI: {fileID: 1914540478}
-  headImage: {fileID: 1986204808}
+  mannequinHouseCanvas: {fileID: 1914540478}
   armImage: {fileID: 710760832}
+  headImage: {fileID: 1986204808}
   legImage: {fileID: 925883776}
-  headColoredSprite: {fileID: 21300000, guid: 285e716e745a358478312322ef0a9039, type: 3}
-  armColoredSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  legColoredSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  headTick: {fileID: 919349230}
   armTick: {fileID: 1321759517}
+  headTick: {fileID: 919349230}
   legTick: {fileID: 563505602}
 --- !u!4 &1241694820
 Transform:
@@ -25925,11 +25922,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 49e68c4727aa20c4eb05f3620d528a13, type: 3}
       propertyPath: m_Name
-      value: mannequin_arm_left_b
+      value: MannequinArm
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 49e68c4727aa20c4eb05f3620d528a13, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 49e68c4727aa20c4eb05f3620d528a13, type: 3}
+      propertyPath: m_TagString
+      value: MannequinPart
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49e68c4727aa20c4eb05f3620d528a13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26182,6 +26183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8587011080165464012, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: mannequinInventoryManager
+      value: 
+      objectReference: {fileID: 1241694819}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
