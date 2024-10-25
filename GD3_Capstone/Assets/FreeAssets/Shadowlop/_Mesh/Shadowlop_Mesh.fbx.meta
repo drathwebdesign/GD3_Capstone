@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: c15f93451e281b24dbbaef13ea94f004
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272635
+  packageName: 'Cursed Toy: Shadowlop'
+  packageVersion: 1.0
+  assetPath: Assets/Shadowlop/_Mesh/Shadowlop_Mesh.fbx
+  uploadId: 633042
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,8 +23,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -35,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.02
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -107,10 +112,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 272635
-  packageName: 'Cursed Toy: Shadowlop'
-  packageVersion: 1.0
-  assetPath: Assets/Shadowlop/_Mesh/Shadowlop_Mesh.fbx
-  uploadId: 633042

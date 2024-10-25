@@ -9,7 +9,7 @@ public class StalkerEnemy : MonoBehaviour
     public float positionOffsetToPlayer = 5f;
 
     [SerializeField] FieldOfView playerFow;
-    
+
     private NavMeshAgent agent;
 
     private enum EnemyState
@@ -22,7 +22,6 @@ public class StalkerEnemy : MonoBehaviour
 
     private void Start()
     {
-        enemyState = EnemyState.IDLE;
         agent = GetComponent<NavMeshAgent>();
     }
     private void FixedUpdate()
@@ -32,28 +31,34 @@ public class StalkerEnemy : MonoBehaviour
     }
     public void MovementCheck()
     {
-        if(enemyState != EnemyState.ATTACKING)
+        float distance = Vector3.Distance(playerFow.transform.position, transform.position);
+        
+        //always look towards the player
+        transform.LookAt(playerFow.transform);
+
         //if enemy is outside of player range move towards the player
-        if (Vector3.Distance(transform.position, playerFow.transform.position) > playerFow.viewRadius + positionOffsetToPlayer)
+        if (distance > playerFow.viewRadius + positionOffsetToPlayer)
         {
-            agent.Move(playerFow.transform.position);
+            Move(-playerFow.transform.forward, agent.speed);
         }
         //if enemy is too close to the player move him towards to scare player
-        else
+        else if (distance < playerFow.viewRadius + positionOffsetToPlayer)
         {
-            agent.Move(playerFow.transform.forward * -1);
+           Move(playerFow.transform.forward, agent.speed);
         }
 
-        enemyState = EnemyState.MOVING;
+    }
+    public void Move(Vector3 direction, float speed)
+    {
+        agent.Move(direction * speed * Time.deltaTime);
     }
     public void AttackCheck()
     {
         //if player gets in attack range attack the player and kill him
-        if(Vector3.Distance(transform.position, playerFow.transform.position) <= attackRange)
+        if (Vector3.Distance(transform.position, playerFow.transform.position) <= attackRange)
         {
             //waaaagh
-            agent.Move(playerFow.transform.position);
-            enemyState = EnemyState.ATTACKING;
+            agent.Move(playerFow.transform.position * agent.speed * Time.deltaTime);
         }
     }
     public void Appear()
