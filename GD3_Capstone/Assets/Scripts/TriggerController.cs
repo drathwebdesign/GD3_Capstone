@@ -9,7 +9,7 @@ public class TriggerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SoundFXManager.Instance.PlaySoundFXClip(narration1, transform, 1f);
+        SoundFXManager.Instance.PlaySoundFXClip(0, narration1, transform, 1f);
         storyProgress = 1;
     }
 
@@ -23,7 +23,7 @@ public class TriggerController : MonoBehaviour
     {
         if (other.CompareTag("Player") && storyProgress == 1)
         {
-            SoundFXManager.Instance.PlaySoundFXClip(narration2, transform, 1f);
+            SoundFXManager.Instance.PlaySoundFXClip(0, narration2, transform, 1f);
             storyProgress++;
 
         }

@@ -41,7 +41,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(narration2, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, narration2, transform, 1f);
                 storyProgress++;
             }
         }
@@ -50,7 +50,7 @@ public class PlayerSFX : MonoBehaviour
         { 
             if  (storyProgress == 1)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(narration2, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, narration2, transform, 1f);
                 storyProgress++;
             }
 
@@ -60,7 +60,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 2)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(narration3, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, narration3, transform, 1f);
                 storyProgress++;
             }
 
@@ -70,7 +70,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 3)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(narration2, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, narration2, transform, 1f);
                 storyProgress++;
             }
         }
@@ -81,7 +81,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (graveyardProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(graveyardNarration1, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration1, transform, 1f);
                 graveyardProgress++;
             }
         }
@@ -90,7 +90,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (graveyardProgress >0 && cabinProgress>0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(graveyardNarration2, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration2, transform, 1f);
                 graveyardProgress++;
             }
         }
@@ -101,7 +101,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (cabinProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(cabinNarration1, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, cabinNarration1, transform, 1f);
                 cabinProgress++;
             }
         }
@@ -113,7 +113,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (houseProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(houseNarration1, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, houseNarration1, transform, 1f);
                 houseProgress++;
             }
         }
