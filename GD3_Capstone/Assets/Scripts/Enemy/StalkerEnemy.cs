@@ -9,5 +9,6 @@ public class StalkerEnemy : MonoBehaviour
     public void Dissapear()
     {
         gameObject.SetActive(false);
+
     }
 }
