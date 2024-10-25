@@ -11,8 +11,18 @@ public class StalkerEnemy : MonoBehaviour
     [SerializeField] FieldOfView playerFow;
     
     private NavMeshAgent agent;
+
+    private enum EnemyState
+    {
+        IDLE,
+        MOVING,
+        ATTACKING,
+    }
+    private EnemyState enemyState;
+
     private void Start()
     {
+        enemyState = EnemyState.IDLE;
         agent = GetComponent<NavMeshAgent>();
     }
     private void FixedUpdate()
@@ -22,6 +32,7 @@ public class StalkerEnemy : MonoBehaviour
     }
     public void MovementCheck()
     {
+        if(enemyState != EnemyState.ATTACKING)
         //if enemy is outside of player range move towards the player
         if (Vector3.Distance(transform.position, playerFow.transform.position) > playerFow.viewRadius + positionOffsetToPlayer)
         {
@@ -29,7 +40,11 @@ public class StalkerEnemy : MonoBehaviour
         }
         //if enemy is too close to the player move him towards to scare player
         else
+        {
             agent.Move(playerFow.transform.forward * -1);
+        }
+
+        enemyState = EnemyState.MOVING;
     }
     public void AttackCheck()
     {
@@ -38,6 +53,7 @@ public class StalkerEnemy : MonoBehaviour
         {
             //waaaagh
             agent.Move(playerFow.transform.position);
+            enemyState = EnemyState.ATTACKING;
         }
     }
     public void Appear()
