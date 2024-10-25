@@ -22,11 +22,14 @@ public class ShakeManager : MonoBehaviour
     private bool flickerActive = false;
     private Transform playerTransform;
 
+    [SerializeField] AudioSource shackAudio;
+
     private void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
         mannequin.SetActive(false);
+        shackAudio = gameObject.AddComponent<AudioSource>();
     }
     private void Update()
     {
@@ -48,6 +51,7 @@ public class ShakeManager : MonoBehaviour
             playerInShack = true;
             StartFlickering();
             ActivateMannequin();
+            PlayShackAudio();
         }
     }
 
@@ -59,6 +63,7 @@ public class ShakeManager : MonoBehaviour
 
             StopFlickering();
             DeactivateMannequin();
+            StopShackAudio();
         }
     }
     IEnumerator FlickerLight()
@@ -144,5 +149,19 @@ public class ShakeManager : MonoBehaviour
             }
         }
     }
-  
+  void PlayShackAudio()
+    {
+        if (shackAudio != null && !shackAudio.isPlaying)
+        {
+            shackAudio.Play();
+        }
+    }
+
+    void StopShackAudio()
+    {
+        if (shackAudio != null && shackAudio.isPlaying)
+        {
+            shackAudio.Stop();
+        }
+    }
 }

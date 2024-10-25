@@ -459,12 +459,12 @@ MonoBehaviour:
           bitDatas:
             data1: 5770166122053453
             data2: 12934340311651434520
-          lodBias: 1
+          lodBias: 0
           lodBiasMode: 0
-          lodBiasQualityLevel: 1
+          lodBiasQualityLevel: 0
           maximumLODLevel: 0
           maximumLODLevelMode: 0
-          maximumLODLevelQualityLevel: 1
+          maximumLODLevelQualityLevel: 0
           sssQualityMode: 0
           sssQualityLevel: 0
           sssCustomSampleBudget: 20
@@ -473,14 +473,14 @@ MonoBehaviour:
           materialQuality: 0
         m_CustomOrBakedReflection:
           bitDatas:
-            data1: 4643523021250381
+            data1: 4643523019153229
             data2: 12898309406071980048
           lodBias: 1
           lodBiasMode: 0
-          lodBiasQualityLevel: 1
+          lodBiasQualityLevel: 0
           maximumLODLevel: 0
           maximumLODLevelMode: 0
-          maximumLODLevelQualityLevel: 1
+          maximumLODLevelQualityLevel: 0
           sssQualityMode: 0
           sssQualityLevel: 0
           sssCustomSampleBudget: 20
