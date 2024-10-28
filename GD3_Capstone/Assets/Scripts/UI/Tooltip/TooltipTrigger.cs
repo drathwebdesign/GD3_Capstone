@@ -1,5 +1,6 @@
 using UnityEngine;
 
 public class TooltipTrigger : MonoBehaviour {
-    public TooltipInfo tooltipInfo; // Assign the specific tooltip for this object
+    public TooltipInfo tooltipInfo;       // Reference to TooltipInfo ScriptableObject
+    public string requiredPartName;       // Name of the part required to interact with this object
 }

@@ -7,31 +7,36 @@ public class TooltipDisplay : MonoBehaviour {
     public TextMeshProUGUI tooltipUI;                 // Reference to TextMeshProUGUI for tooltip text
     private TooltipInfo currentTooltip;               // Stores the current tooltip information
 
+    [SerializeField] private MannequinInventoryManager mannequinInventoryManager;  // Reference to MannequinInventoryManager
+
     void Update() {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange, interactableLayer)) {
-            // Check if the hit object has a TooltipTrigger component
             TooltipTrigger tooltipTrigger = hit.collider.GetComponent<TooltipTrigger>();
             if (tooltipTrigger != null) {
-                ShowTooltip(tooltipTrigger.tooltipInfo);
+                bool hasPart = mannequinInventoryManager.HasPart(tooltipTrigger.requiredPartName);
+                Debug.Log($"Tooltip for {tooltipTrigger.requiredPartName}: hasPart = {hasPart}");  // Debug to check hasPart value
+                ShowTooltip(tooltipTrigger.tooltipInfo, hasPart);
             }
         } else {
             HideTooltip(); // Hide tooltip when nothing is in range
         }
     }
 
-    void ShowTooltip(TooltipInfo tooltipInfo) {
+
+
+    private void ShowTooltip(TooltipInfo tooltipInfo, bool hasPart) {
         if (tooltipInfo != currentTooltip) {
             currentTooltip = tooltipInfo;
-            tooltipUI.text = tooltipInfo.tooltipText;    // Set the tooltip text
-            tooltipUI.gameObject.SetActive(true);        // Show the tooltip UI
+            tooltipUI.text = tooltipInfo.GetTooltip(hasPart);   // Fetch the correct tooltip text
+            tooltipUI.gameObject.SetActive(true);               // Show the tooltip UI
         }
     }
 
-    void HideTooltip() {
+    private void HideTooltip() {
         if (currentTooltip != null) {
             currentTooltip = null;
-            tooltipUI.gameObject.SetActive(false);       // Hide the tooltip UI
+            tooltipUI.gameObject.SetActive(false);              // Hide the tooltip UI
         }
     }
 }

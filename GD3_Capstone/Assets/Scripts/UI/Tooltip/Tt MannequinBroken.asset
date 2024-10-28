@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee1a1b9485f811443adeb560fccf9880, type: 3}
-  m_Name: 'Tt [E]'
+  m_Name: Tt MannequinBroken
   m_EditorClassIdentifier: 
-  missingPartTooltip: '[E]'
-  hasPartTooltip: 
+  missingPartTooltip: This Mannequin is missing a part
+  hasPartTooltip: '[E]'
