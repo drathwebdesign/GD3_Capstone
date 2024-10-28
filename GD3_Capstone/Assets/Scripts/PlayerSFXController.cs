@@ -8,10 +8,15 @@ public class PlayerSFX : MonoBehaviour
     public int houseProgress;
     public int cabinProgress;
 
+    public float VolumeQuiet = 0.3f;
+    public float VolumeLoud = 1;
 
     [SerializeField] AudioClip narration1;
-    [SerializeField] AudioClip narration2;
-    [SerializeField] AudioClip narration3;
+    [SerializeField] AudioClip itStinks;
+    [SerializeField] AudioClip somethingTerrible;  
+    [SerializeField] AudioClip someoneWatching;
+    [SerializeField] AudioClip iSenseAPresence;
+    [SerializeField] AudioClip test;
 
     [SerializeField] AudioClip graveyardNarration1;
     [SerializeField] AudioClip graveyardNarration2;
@@ -20,11 +25,14 @@ public class PlayerSFX : MonoBehaviour
 
     [SerializeField] AudioClip houseNarration1;
 
+    [SerializeField] AudioClip pianoMusic;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         storyProgress = 0;
         graveyardProgress = 0;
+        SoundFXManager.Instance.PlaySoundFXClip(1,pianoMusic, transform, 0.03f);
     }
 
     // Update is called once per frame
@@ -37,11 +45,13 @@ public class PlayerSFX : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //heading right
+
         if (other.transform.name == "(1)SpawnTrigger(0)")
         {
             if (storyProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(narration2, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1, narration1, transform, VolumeQuiet);
                 storyProgress++;
             }
         }
@@ -50,30 +60,90 @@ public class PlayerSFX : MonoBehaviour
         { 
             if  (storyProgress == 1)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(narration2, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1, itStinks, transform, VolumeQuiet);
                 storyProgress++;
             }
 
         }
 
-        if (other.transform.name == "(1)TriggerRight(2)")
+//        if (other.transform.name == "(1)TriggerRight(2)")
+//        {
+//            if (storyProgress == 2)
+//            {
+//                SoundFXManager.Instance.PlaySoundFXClip(1, somethingTerrible, transform, VolumeQuiet);
+//                storyProgress++;
+//            }
+
+//        }
+
+        if (other.transform.name == "SpawntoCabinBridgeTrigger")
         {
             if (storyProgress == 2)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(narration3, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1, someoneWatching, transform, VolumeLoud);
                 storyProgress++;
             }
-
         }
+
+        //heading left
 
         if (other.transform.name == "(1)TriggerLeft(1)")
         {
-            if (storyProgress == 3)
+            if (storyProgress == 1)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(narration2, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1, iSenseAPresence, transform, VolumeQuiet);
                 storyProgress++;
             }
         }
+
+        if (other.transform.name == "(1)TriggerLeft(2)")
+        {
+            if (storyProgress == 2)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(1, iSenseAPresence, transform, VolumeQuiet);
+                storyProgress++;
+            }
+        }
+
+        //heading backwards
+
+        if (other.transform.name == "BackBridgeTrigger")
+        {
+            if (storyProgress == 1)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(1, somethingTerrible, transform, VolumeQuiet);
+                storyProgress++;
+            }
+        }
+
+        if (other.transform.name == "(1)TriggerBack(1)")
+        {
+            if (storyProgress == 2)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(1, iSenseAPresence, transform, VolumeQuiet);
+                storyProgress++;
+            }
+        }
+
+        //crossing the bridge
+
+        if (other.transform.name == "(1)BridgeTrigger(1)")
+        {
+            if (storyProgress == 1)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(1, iSenseAPresence, transform, VolumeQuiet);
+                storyProgress++;
+            }
+        }
+
+//        if (other.transform.name == "SpawnToMainBridgeTrigger")
+//        {
+//            if (storyProgress == 2)
+//            {
+//                SoundFXManager.Instance.PlaySoundFXClip(1, someoneWatching, transform, VolumeLoud);
+//                storyProgress++;
+//            }
+//        }
 
         //graveyard triggers
 
@@ -81,7 +151,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (graveyardProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(graveyardNarration1, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1, graveyardNarration1, transform, VolumeQuiet);
                 graveyardProgress++;
             }
         }
@@ -90,7 +160,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (graveyardProgress >0 && cabinProgress>0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(graveyardNarration2, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1, graveyardNarration2, transform, VolumeQuiet);
                 graveyardProgress++;
             }
         }
@@ -101,7 +171,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (cabinProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(cabinNarration1, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1, cabinNarration1, transform, VolumeQuiet);
                 cabinProgress++;
             }
         }
@@ -110,10 +180,10 @@ public class PlayerSFX : MonoBehaviour
 
 
         if (other.transform.name == "HouseTrigger")
-        {
+        { 
             if (houseProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(houseNarration1, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1,houseNarration1, transform, VolumeQuiet);
                 houseProgress++;
             }
         }
