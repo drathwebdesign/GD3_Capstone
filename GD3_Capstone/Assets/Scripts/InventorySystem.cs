@@ -1,52 +1,61 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
-public class InventorySystem : MonoBehaviour
-{
+public class InventorySystem : MonoBehaviour {
     public List<GameObject> inventory;
     private GameObject currentHeldObject;
+    private int maxHotbarItems = 8;
+    [SerializeField] Transform itemContainer;  // ItemContainer positioned in front of the player
 
-    private void Start()
-    {
+    public List<Image> hotbarSlots;  // List of UI images for each hotbar slot
+
+    private void Start() {
         inventory = new List<GameObject>();
     }
-    void Update()
-    {
-        //Works for now I guess
-        if (Input.GetKeyDown(KeyCode.Alpha1) && inventory.Count > 0)
-            SetCurrentHeldObject(inventory[0]);
-        if (Input.GetKeyDown(KeyCode.Alpha2) && inventory.Count > 1)
-            SetCurrentHeldObject(inventory[1]);
-        if (Input.GetKeyDown(KeyCode.Alpha3) && inventory.Count > 2)
-            SetCurrentHeldObject(inventory[2]);
-        if (Input.GetKeyDown(KeyCode.Alpha4) && inventory.Count > 3)
-            SetCurrentHeldObject(inventory[3]);
-        if (Input.GetKeyDown(KeyCode.Alpha5) && inventory.Count > 4)
-            SetCurrentHeldObject(inventory[4]);
-        if (Input.GetKeyDown(KeyCode.Alpha6) && inventory.Count > 5)
-            SetCurrentHeldObject(inventory[5]);
-        if (Input.GetKeyDown(KeyCode.Alpha7) && inventory.Count > 6)
-            SetCurrentHeldObject(inventory[6]);
-        if (Input.GetKeyDown(KeyCode.Alpha8) && inventory.Count > 7)
-            SetCurrentHeldObject(inventory[7]);
-        if (Input.GetKeyDown(KeyCode.Alpha9) && inventory.Count > 8)
-            SetCurrentHeldObject(inventory[8]);
-    }
-    public void AddItem(GameObject item)
-    {
-        inventory.Add(item);
-        item.SetActive(false);
-    }
-    public void SetCurrentHeldObject(GameObject newItem)
-    {
-            if (!currentHeldObject)
-            {
-                currentHeldObject = newItem;
-                currentHeldObject.SetActive(true);
-                return;
+
+    void Update() {
+        for (int i = 0; i < maxHotbarItems; i++) {
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i) && i < inventory.Count) {
+                SetCurrentHeldObject(inventory[i]);
             }
+        }
+    }
+
+    public void AddItem(GameObject item) {
+        if (inventory.Count < maxHotbarItems) {
+            inventory.Add(item);
+            item.SetActive(false);  // Hide the item initially
+            UpdateHotbarUI();
+        } else {
+            Debug.Log("Inventory is full. Cannot add more items.");
+        }
+    }
+
+    public void SetCurrentHeldObject(GameObject newItem) {
+        if (currentHeldObject) {
             currentHeldObject.SetActive(false);
-            currentHeldObject = newItem;
-            currentHeldObject.SetActive(true);
+        }
+
+        // Move item to itemContainer in front of player
+        newItem.transform.SetParent(itemContainer);
+        newItem.transform.localPosition = Vector3.zero;  // Center it in itemContainer
+        newItem.transform.localRotation = Quaternion.identity;
+
+        currentHeldObject = newItem;
+        currentHeldObject.SetActive(true);  // Activate the new item
+    }
+
+    private void UpdateHotbarUI() {
+        // Update each hotbar slot's icon based on the current inventory
+        for (int i = 0; i < hotbarSlots.Count; i++) {
+            if (i < inventory.Count) {
+                hotbarSlots[i].sprite = inventory[i].GetComponent<Item>().icon;  // Assumes items have an Item script with an icon field
+                hotbarSlots[i].enabled = true;
+            } else {
+                hotbarSlots[i].enabled = false;  // Hide empty slots
+            }
+        }
     }
 }

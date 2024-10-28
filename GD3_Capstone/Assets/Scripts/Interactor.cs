@@ -26,11 +26,28 @@ public class Interactor : MonoBehaviour {
                 } else if (objectInHands.CompareTag("Door")) {
                     // Handle door opening
                     OpenDoor(objectInHands);
+                } else if (objectInHands.CompareTag("Item")) {   // New case for adding items to inventory
+                    AddItemToInventory(objectInHands);
                 }
             }
         }
     }
 
+    private void OpenDoor(GameObject door) {
+        Animator doorAnimator = door.GetComponent<Animator>();
+        if (doorAnimator != null) {
+            // Trigger the animation for opening the door
+            doorAnimator.SetTrigger("Open");
+        } else {
+            Debug.LogWarning("The door does not have an Animator component.");
+        }
+    }
+
+    private void AddItemToInventory(GameObject item) {
+        inventorySystem.AddItem(item);  // Add item to InventorySystem
+    }
+
+    #region Mannequin
     private void CollectMannequinPart(GameObject part) {
         // Determine the part type and update the MannequinInventoryManager
         string partName = part.name;  // Expect names like "MannequinArm", "MannequinHead", "MannequinLeg"
@@ -76,14 +93,7 @@ public class Interactor : MonoBehaviour {
                 return null;
         }
     }
+    #endregion
 
-    private void OpenDoor(GameObject door) {
-        Animator doorAnimator = door.GetComponent<Animator>();
-        if (doorAnimator != null) {
-            // Trigger the animation for opening the door
-            doorAnimator.SetTrigger("Open");
-        } else {
-            Debug.LogWarning("The door does not have an Animator component.");
-        }
-    }
+
 }
