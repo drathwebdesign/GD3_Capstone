@@ -7,6 +7,7 @@ public class StalkerEnemy : MonoBehaviour
     public float attackRange = 10f;
     public float appereanceDelay = 1f;
     public float positionOffsetToPlayer = 5f;
+    public bool isActive = true;
 
     [SerializeField] FieldOfView playerFow;
 
@@ -26,13 +27,16 @@ public class StalkerEnemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        MovementCheck();
-        AttackCheck();
+        if (isActive)
+        {
+            MovementCheck();
+            AttackCheck();
+        }
     }
     public void MovementCheck()
     {
         float distance = Vector3.Distance(playerFow.transform.position, transform.position);
-        
+
         //always look towards the player
         transform.LookAt(playerFow.transform);
 
@@ -44,7 +48,7 @@ public class StalkerEnemy : MonoBehaviour
         //if enemy is too close to the player move him towards to scare player
         else if (distance < playerFow.viewRadius + positionOffsetToPlayer)
         {
-           Move(playerFow.transform.forward, agent.speed);
+            Move(playerFow.transform.forward, agent.speed);
         }
 
     }
@@ -58,7 +62,7 @@ public class StalkerEnemy : MonoBehaviour
         if (Vector3.Distance(transform.position, playerFow.transform.position) <= attackRange)
         {
             //waaaagh
-            agent.Move(playerFow.transform.position * agent.speed * Time.deltaTime);
+            agent.Move(-playerFow.transform.forward * agent.speed * Time.deltaTime);
         }
     }
     public void Appear()
