@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8800562893863330049}
   - component: {fileID: 6974529355563718693}
   - component: {fileID: 8950494357614133404}
+  - component: {fileID: 8306348048513845160}
   m_Layer: 0
   m_Name: TreeS2NL
   m_TagString: Untagged
@@ -158,3 +159,30 @@ CapsuleCollider:
   m_Height: 10
   m_Direction: 1
   m_Center: {x: -0.5, y: 4.5, z: 0}
+--- !u!205 &8306348048513845160
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972570311170696858}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0033485016
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4780896002681757966}
+  - screenRelativeHeight: 0.0033485016
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4780896002681757966}
+  - screenRelativeHeight: 0.0033485016
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4780896002681757966}
+  m_Enabled: 1
