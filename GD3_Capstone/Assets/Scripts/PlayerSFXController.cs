@@ -16,7 +16,7 @@ public class PlayerSFX : MonoBehaviour
     [SerializeField] AudioClip somethingTerrible;  
     [SerializeField] AudioClip someoneWatching;
     [SerializeField] AudioClip iSenseAPresence;
-    [SerializeField] AudioClip test;
+  
 
     [SerializeField] AudioClip graveyardNarration1;
     [SerializeField] AudioClip graveyardNarration2;
@@ -131,7 +131,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 1)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, iSenseAPresence, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(1, somethingTerrible, transform, VolumeQuiet);
                 storyProgress++;
             }
         }
