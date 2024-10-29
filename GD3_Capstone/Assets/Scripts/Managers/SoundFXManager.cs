@@ -26,7 +26,11 @@ public class SoundFXManager : MonoBehaviour {
         AudioSource audioSourcePrefab = soundFXObjects[soundFXIndex];
 
         // Spawn the AudioSource prefab
-        AudioSource audioSource = Instantiate(audioSourcePrefab, spawnTransform.position, Quaternion.identity);
+        //   AudioSource audioSource = Instantiate(audioSourcePrefab, spawnTransform.position, Quaternion.identity);
+
+        //find the player and make the audiosource prefab a child of the player
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        AudioSource audioSource = Instantiate(audioSourcePrefab, spawnTransform.position, Quaternion.identity, player.transform);
 
         // Assign the audio clip
         audioSource.clip = audioClip;
