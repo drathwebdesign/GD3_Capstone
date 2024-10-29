@@ -11205,9 +11205,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1591482312}
     m_Modifications:
+    - target: {fileID: 1600007506279304979, guid: 6cc789e8995cd3f40b943f2983d225bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2997812866897392902, guid: 6cc789e8995cd3f40b943f2983d225bc, type: 3}
       propertyPath: m_Name
       value: Main House
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101764790242088152, guid: 6cc789e8995cd3f40b943f2983d225bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8137339144487752506, guid: 6cc789e8995cd3f40b943f2983d225bc, type: 3}
       propertyPath: m_LocalPosition.x
