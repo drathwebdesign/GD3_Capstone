@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Starting new game with save file: " + saveFileName);
 
         // Optionally set the player's position to a default start position
-        PlayerData newPlayerData = new PlayerData(saveFileName, new Vector3(4f, -0.51f, -30f));
+        PlayerData newPlayerData = new PlayerData(saveFileName, new Vector3(195.75f, 3.369f, 186.95f));
         SaveSystem.SavePlayer(newPlayerData);
 
         // Load the game scene

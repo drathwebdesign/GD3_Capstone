@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class MannequinHeadFollow : MonoBehaviour {
     public Transform headTransform;  // Assign the head transform of the mannequin
-    public Transform playerTransform; // Assign the player's transform (likely the camera)
-
+    private Transform playerTransform; // Player's transform will be found automatically
     private MannequinFOVDetector fovDetector; // Reference to the FOV Detector script
 
     void Start() {
-        // Get reference to the FOV detector on the player
-        fovDetector = playerTransform.GetComponent<MannequinFOVDetector>();
+        // Find the player transform by tag
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null) {
+            playerTransform = player.transform;
+            fovDetector = playerTransform.GetComponent<MannequinFOVDetector>();
+        } else {
+            Debug.LogError("Player with tag 'Player' not found. Make sure a player object is tagged correctly.");
+        }
     }
 
     void Update() {
         // If the mannequin is not in view, rotate the head to face the player
-        if (!fovDetector.IsMannequinInView(transform)) {
+        if (playerTransform != null && fovDetector != null && !fovDetector.IsMannequinInView(transform)) {
             RotateHeadTowardsPlayer();
         }
     }
