@@ -10,6 +10,6 @@ EditorBuildSettings:
     guid: 1ffba03cb96d6124cb95b96c18150b3e
   - enabled: 1
     path: Assets/Scenes/Map1.unity
-    guid: 7c5c4451159ee2d48a0ad96da99ed247
+    guid: 5c9ea0cf71682f24a81dfed918a2b380
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

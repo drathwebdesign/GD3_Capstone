@@ -18509,58 +18509,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 488944, guid: 8996c8680be073342a111a684ca95e17, type: 3}
   m_PrefabInstance: {fileID: 1451814164}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1241694818
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1241694820}
-  - component: {fileID: 1241694819}
-  m_Layer: 0
-  m_Name: MannequinHouseManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1241694819
+--- !u!114 &1241694819 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+  m_PrefabInstance: {fileID: 3510847825437968740}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241694818}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8292b5973bdb6a49bcd4ada79659eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mannequinHouseCanvas: {fileID: 1914540478}
-  armImage: {fileID: 710760832}
-  headImage: {fileID: 1986204808}
-  legImage: {fileID: 925883776}
-  armTick: {fileID: 1321759517}
-  headTick: {fileID: 919349230}
-  legTick: {fileID: 563505602}
-  keyObject: {fileID: 880069185}
---- !u!4 &1241694820
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241694818}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1245473736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36063,6 +36022,95 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 765be23f07413c540be3dc3c1e99ee0a, type: 3}
+--- !u!1001 &3510847825437968740
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 347542046294699189, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_Name
+      value: MannequinHouseManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270296743258252462, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: armTick
+      value: 
+      objectReference: {fileID: 1321759517}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: legTick
+      value: 
+      objectReference: {fileID: 563505602}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: armImage
+      value: 
+      objectReference: {fileID: 710760832}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: headTick
+      value: 
+      objectReference: {fileID: 919349230}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: legImage
+      value: 
+      objectReference: {fileID: 925883776}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: headImage
+      value: 
+      objectReference: {fileID: 1986204808}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: keyObject
+      value: 
+      objectReference: {fileID: 880069185}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: mannequinHouseCanvas
+      value: 
+      objectReference: {fileID: 1914540478}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
 --- !u!1001 &3803301032326404337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36474,7 +36522,7 @@ SceneRoots:
   - {fileID: 2390299155487540377}
   - {fileID: 5523430729944745975}
   - {fileID: 8540360857022682837}
-  - {fileID: 1241694820}
+  - {fileID: 3510847825437968740}
   - {fileID: 1878422156}
   - {fileID: 3803301032326404337}
   - {fileID: 507912590645529697}
