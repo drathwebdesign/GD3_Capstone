@@ -1,42 +1,38 @@
 using UnityEngine;
 
-public class FootStepsSystem : MonoBehaviour
-{
+public class FootStepsSystem : MonoBehaviour {
     [Header("References")]
     [SerializeField] HeadBobController headBobController;
+    [SerializeField] PlayerMovement playerMovement; // Reference to PlayerMovement script
 
     [Header("Audio")]
     [SerializeField] AudioSource playerAudioSource;
-    [SerializeField] AudioClip[] dirtFootStepsArray;
+    [SerializeField] AudioClip[] outdoorFootStepsArray; // Outdoor footsteps
+    [SerializeField] AudioClip[] indoorFootStepsArray;  // Indoor footsteps
 
     private bool once = false;
     private int previousIndex = 0;
-    void LateUpdate()
-    {
-        //if player is moving and camera is going down play sounds once per step
-        if (headBobController.controller.GetMovementVector().magnitude > 0.1f && headBobController.GetCameraTransform().localPosition.y < 0)
-        {
-            //use once to play sound once camera is negative
-            if (!once)
-            {
+
+    void LateUpdate() {
+        if (headBobController.controller.GetMovementVector().magnitude > 0.1f && headBobController.GetCameraTransform().localPosition.y < 0) {
+            if (!once) {
                 once = true;
                 PlaySoundsBySurface();
             }
-        }
-        //reset bool to play sound again
-        else if (headBobController.GetCameraTransform().localPosition.y >= 0)
+        } else if (headBobController.GetCameraTransform().localPosition.y >= 0) {
             once = false;
+        }
     }
-    void PlaySoundsBySurface()
-    {
-        //get random index from array
-        int index = Random.Range(0, dirtFootStepsArray.Length);
+
+    void PlaySoundsBySurface() {
+        AudioClip[] footstepArray = playerMovement.isIndoors ? indoorFootStepsArray : outdoorFootStepsArray;
+
+        int index = Random.Range(0, footstepArray.Length);
         previousIndex = index;
-        
-        //don't play same footstep twice
-        if (previousIndex == index && index < dirtFootStepsArray.Length - 1) 
+
+        if (previousIndex == index && index < footstepArray.Length - 1)
             index++;
 
-        playerAudioSource.PlayOneShot(dirtFootStepsArray[index]);
+        playerAudioSource.PlayOneShot(footstepArray[index]);
     }
 }
