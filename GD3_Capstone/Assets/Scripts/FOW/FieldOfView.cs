@@ -11,8 +11,10 @@ public class FieldOfView : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
-    [HideInInspector]
+    //[HideInInspector]
     public List<Transform> visibleTargets = new();
+
+    private StalkerEnemy stalkerEnemyRef;
 
     private void Start()
     {
@@ -28,7 +30,11 @@ public class FieldOfView : MonoBehaviour
     }
     private void FindVisibleTargets()
     {
-        visibleTargets.Clear();
+        if (visibleTargets.Count > 0 && stalkerEnemyRef.gameObject)
+        {
+            stalkerEnemyRef.Appear();
+            visibleTargets.Clear();
+        }
         Collider[] targetsInRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
         for (int i = 0; i < targetsInRadius.Length; i++)
@@ -45,6 +51,11 @@ public class FieldOfView : MonoBehaviour
                     ////CAN SEE TARGET
                     //add target to visible targets array
                     visibleTargets.Add(target);
+                    if(target.TryGetComponent(out StalkerEnemy enemy))
+                    {
+                        stalkerEnemyRef = enemy;
+                        stalkerEnemyRef.Dissapear();
+                    }
                 }
             }
         }
