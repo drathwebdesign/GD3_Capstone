@@ -212,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1732229857744557428, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 1732229857744557428, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5265759920284975941, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 5265759920284975941, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -272,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5965951396372681157, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 630
       objectReference: {fileID: 0}
     - target: {fileID: 5965951396372681157, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -300,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6956985984132402397, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 735
       objectReference: {fileID: 0}
     - target: {fileID: 6956985984132402397, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7993515639079559061, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 525
       objectReference: {fileID: 0}
     - target: {fileID: 7993515639079559061, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004899985115314178, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 315
       objectReference: {fileID: 0}
     - target: {fileID: 8004899985115314178, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -488,7 +488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8670254117541949547, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 420
       objectReference: {fileID: 0}
     - target: {fileID: 8670254117541949547, guid: ea47a29985cfa2d4ba224ad47bd03ead, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -20034,6 +20034,46 @@ PrefabInstance:
       propertyPath: 'hotbarOutlines.Array.data[2]'
       value: 
       objectReference: {fileID: 299601690}
+    - target: {fileID: 4597785958172741390, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1663080440}
+    - target: {fileID: 4597785958172741390, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: indoorFootStepsArray.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597785958172741390, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: outdoorFootStepsArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597785958172741390, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: 'indoorFootStepsArray.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 4047aaaa19814be44ae0f40e9b70e1fd, type: 3}
+    - target: {fileID: 4597785958172741390, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: 'indoorFootStepsArray.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 80213e79ca9796143b5ee8247490a268, type: 3}
+    - target: {fileID: 4597785958172741390, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: 'indoorFootStepsArray.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: cd2b5a4eab0b39b48baeecbb5743ec2c, type: 3}
+    - target: {fileID: 4597785958172741390, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: 'outdoorFootStepsArray.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d804fe203a3bcd44b9ce0c38c1dee17a, type: 3}
+    - target: {fileID: 4597785958172741390, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: 'outdoorFootStepsArray.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 729dda68891e649468b991f3df341472, type: 3}
+    - target: {fileID: 5061075995814826845, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: indoorGround.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061075995814826845, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      propertyPath: outdoorGround.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 6084424999274275994, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_Name
       value: Player
@@ -20131,6 +20171,17 @@ MonoBehaviour:
     m_Bits: 128
   tooltipUI: {fileID: 1164616241}
   mannequinInventoryManager: {fileID: 416660952}
+--- !u!114 &1663080440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5061075995814826845, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+  m_PrefabInstance: {fileID: 1663080437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705732525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e3dc0a05bba6247bb41a5c9ed0d77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1665813575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 457592, guid: f36479c73ce938a4a946477482ce20ab, type: 3}
