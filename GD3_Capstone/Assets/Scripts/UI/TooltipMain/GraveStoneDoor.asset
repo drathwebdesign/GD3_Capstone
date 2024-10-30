@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1a1b9485f811443adeb560fccf9880, type: 3}
   m_Name: GraveStoneDoor
   m_EditorClassIdentifier: 
-  missingPartTooltip: The Door is has the symbol of a gravestone on it
+  missingPartTooltip: The Door has the symbol of a gravestone on it
   hasPartTooltip: '[E]'

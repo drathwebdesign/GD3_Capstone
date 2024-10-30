@@ -5,7 +5,6 @@ public class Interactor : MonoBehaviour {
     [SerializeField] private InventorySystem inventorySystem;  // Reference to the main inventory system
     [SerializeField] private MannequinInventoryManager mannequinInventoryManager;  // Reference to the mannequin inventory manager
     [SerializeField] private TooltipDisplay tooltipDisplay;  // Reference to the tooltip display system
-    [SerializeField] private Transform itemContainer;
     [SerializeField] private LayerMask whatIsInteractable;
     [SerializeField] private float range = 2f;
 
@@ -16,31 +15,32 @@ public class Interactor : MonoBehaviour {
             if (Physics.Raycast(transform.position, transform.forward, out RaycastHit interactable, range, whatIsInteractable)) {
                 objectInHands = interactable.transform.gameObject;
 
+                // Handle different interactions based on the tag of the interactable object
                 if (objectInHands.CompareTag("MannequinPart")) {
-                    CollectMannequinPart(objectInHands);
+                    CollectMannequinPart(objectInHands);   // Collect a mannequin part
                 } else if (objectInHands.CompareTag("MannequinBroken")) {
-                    HandleMannequinInteraction(objectInHands);  // Mannequin interaction function
+                    HandleMannequinInteraction(objectInHands);  // Mannequin interaction
                 } else if (objectInHands.CompareTag("Door")) {
-                    HandleDoorInteraction(objectInHands);  // Door interaction function
+                    HandleDoorInteraction(objectInHands);  // Door interaction
                 } else if (objectInHands.CompareTag("Item")) {
-                    AddItemToInventory(objectInHands);
+                    AddItemToInventory(objectInHands);   // Pick up a regular item
                 }
             }
         }
     }
 
     private void HandleMannequinInteraction(GameObject mannequin) {
-        TooltipTrigger tooltipTrigger = mannequin.GetComponent<TooltipTrigger>();
+        TooltipTriggerMannequin tooltipTrigger = mannequin.GetComponent<TooltipTriggerMannequin>();
 
         if (tooltipTrigger != null) {
             string requiredPartName = tooltipTrigger.requiredPartName;
             bool hasRequiredPart = mannequinInventoryManager.HasPart(requiredPartName);
 
-            // Show the appropriate tooltip based on whether the player has the required part in inventory
-            tooltipDisplay.ShowTooltip(tooltipTrigger.tooltipInfo, hasRequiredPart);
+            // Show the correct tooltip for mannequins
+            tooltipDisplay.ShowTooltipMannequin(tooltipTrigger.tooltipInfo, hasRequiredPart);
 
             if (hasRequiredPart) {
-                // Player has the required part in inventory, so restore the mannequin part
+                // If the required part is in the mannequin inventory, restore the part on the mannequin
                 RestoreMannequinPart(mannequin);
             } else {
                 Debug.Log("You need the " + requiredPartName + " to complete this mannequin.");
@@ -52,18 +52,18 @@ public class Interactor : MonoBehaviour {
         TooltipTrigger tooltipTrigger = door.GetComponent<TooltipTrigger>();
 
         if (tooltipTrigger != null) {
-            string requiredPartName = tooltipTrigger.requiredPartName;
+            string requiredKeyName = tooltipTrigger.requiredPartName;
             bool hasRequiredKey = inventorySystem.currentHeldObject != null &&
-                                  inventorySystem.currentHeldObject.name == requiredPartName;
+                                  inventorySystem.currentHeldObject.name == requiredKeyName;
 
-            // Show the appropriate tooltip based on whether the player is holding the required key
+            // Show the correct tooltip for doors
             tooltipDisplay.ShowTooltip(tooltipTrigger.tooltipInfo, hasRequiredKey);
 
-            if (hasRequiredKey || string.IsNullOrEmpty(requiredPartName)) {
-                // Player has the required key or no key is required, so open the door
+            if (hasRequiredKey || string.IsNullOrEmpty(requiredKeyName)) {
+                // Open the door if the player has the required key or no key is required
                 OpenDoor(door);
             } else {
-                Debug.Log("You need the " + requiredPartName + " to open this door.");
+                Debug.Log("You need the " + requiredKeyName + " to open this door.");
             }
         } else {
             // Open doors that don’t have a key requirement or TooltipTrigger
@@ -94,7 +94,7 @@ public class Interactor : MonoBehaviour {
     }
 
     private void CollectMannequinPart(GameObject part) {
-        string partName = part.name;  // Example: "MannequinArm", "MannequinHead", "MannequinLeg"
+        string partName = part.name;  // Expect names like "MannequinArm", "MannequinHead", "MannequinLeg"
         mannequinInventoryManager.CollectPart(partName);
 
         // Remove the part from the scene after collecting
@@ -113,7 +113,6 @@ public class Interactor : MonoBehaviour {
             return;
         }
 
-        // Check if the player has the required part in the inventory
         bool hasRequiredPart = mannequinInventoryManager.HasPart(requiredPart);
         if (hasRequiredPart) {
             Debug.Log($"Restoring {requiredPart} to {mannequin.name}.");
