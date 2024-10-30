@@ -2,14 +2,12 @@ using UnityEngine;
 using System.Collections;
 
 public class Interactor : MonoBehaviour {
-    [SerializeField] InventorySystem inventorySystem;  // Reference to the main inventory system
-    [SerializeField] MannequinInventoryManager mannequinInventoryManager;  // Reference to the mannequin inventory manager
-    [SerializeField] Transform itemContainer;
-    [SerializeField] LayerMask whatIsInteractable;
-    [SerializeField] float range = 2f;
-
-    [SerializeField] TooltipInfo missingPartTooltip;  // Tooltip when player does not have the part
-    [SerializeField] TooltipInfo hasPartTooltip;      // Tooltip when player has the part
+    [SerializeField] private InventorySystem inventorySystem;  // Reference to the main inventory system
+    [SerializeField] private MannequinInventoryManager mannequinInventoryManager;  // Reference to the mannequin inventory manager
+    [SerializeField] private TooltipDisplay tooltipDisplay;  // Reference to the tooltip display system
+    [SerializeField] private Transform itemContainer;
+    [SerializeField] private LayerMask whatIsInteractable;
+    [SerializeField] private float range = 2f;
 
     private GameObject objectInHands = null;
 
@@ -19,65 +17,87 @@ public class Interactor : MonoBehaviour {
                 objectInHands = interactable.transform.gameObject;
 
                 if (objectInHands.CompareTag("MannequinPart")) {
-                    // Handle collection of a mannequin part
                     CollectMannequinPart(objectInHands);
                 } else if (objectInHands.CompareTag("MannequinBroken")) {
-                    // Handle restoration of a mannequin part to the broken mannequin
-                    RestoreMannequinPart(objectInHands);
+                    HandleMannequinInteraction(objectInHands);  // Mannequin interaction function
                 } else if (objectInHands.CompareTag("Door")) {
-                    // Handle door opening
-                    OpenDoor(objectInHands);
-                } else if (objectInHands.CompareTag("Item")) {   // New case for adding items to inventory
+                    HandleDoorInteraction(objectInHands);  // Door interaction function
+                } else if (objectInHands.CompareTag("Item")) {
                     AddItemToInventory(objectInHands);
                 }
             }
         }
     }
 
+    private void HandleMannequinInteraction(GameObject mannequin) {
+        TooltipTrigger tooltipTrigger = mannequin.GetComponent<TooltipTrigger>();
+
+        if (tooltipTrigger != null) {
+            string requiredPartName = tooltipTrigger.requiredPartName;
+            bool hasRequiredPart = mannequinInventoryManager.HasPart(requiredPartName);
+
+            // Show the appropriate tooltip based on whether the player has the required part in inventory
+            tooltipDisplay.ShowTooltip(tooltipTrigger.tooltipInfo, hasRequiredPart);
+
+            if (hasRequiredPart) {
+                // Player has the required part in inventory, so restore the mannequin part
+                RestoreMannequinPart(mannequin);
+            } else {
+                Debug.Log("You need the " + requiredPartName + " to complete this mannequin.");
+            }
+        }
+    }
+
+    private void HandleDoorInteraction(GameObject door) {
+        TooltipTrigger tooltipTrigger = door.GetComponent<TooltipTrigger>();
+
+        if (tooltipTrigger != null) {
+            string requiredPartName = tooltipTrigger.requiredPartName;
+            bool hasRequiredKey = inventorySystem.currentHeldObject != null &&
+                                  inventorySystem.currentHeldObject.name == requiredPartName;
+
+            // Show the appropriate tooltip based on whether the player is holding the required key
+            tooltipDisplay.ShowTooltip(tooltipTrigger.tooltipInfo, hasRequiredKey);
+
+            if (hasRequiredKey || string.IsNullOrEmpty(requiredPartName)) {
+                // Player has the required key or no key is required, so open the door
+                OpenDoor(door);
+            } else {
+                Debug.Log("You need the " + requiredPartName + " to open this door.");
+            }
+        } else {
+            // Open doors that don’t have a key requirement or TooltipTrigger
+            OpenDoor(door);
+        }
+    }
+
     private void OpenDoor(GameObject door) {
-        // Check if the door object has child animators (for double doors) or its own animator (for single doors)
         Animator[] childAnimators = door.GetComponentsInChildren<Animator>();
         Animator singleAnimator = door.GetComponent<Animator>();
 
         if (childAnimators.Length > 1) {
-            // This is a double door setup with child animators
             foreach (Animator animator in childAnimators) {
                 animator.SetTrigger("Open");
             }
-            // Set the layer of the parent door to Default after opening
             StartCoroutine(SetLayerToDefaultAfterAnimation(door));
         } else if (singleAnimator != null) {
-            // This is a single door setup with its own animator
             singleAnimator.SetTrigger("Open");
-            // Set the layer of the single door to Default after opening
             StartCoroutine(SetLayerToDefaultAfterAnimation(door));
         } else {
             Debug.LogWarning("The door does not have an Animator component.");
         }
     }
 
-    // Coroutine to wait for the animation to start and then set the layer to Default
     private IEnumerator SetLayerToDefaultAfterAnimation(GameObject door) {
-        // Wait for the animation duration or a short delay (adjust as needed)
-        yield return new WaitForSeconds(0.5f); // Change this value based on the animation length
-
-        // Set the door or door parent layer to Default (layer 0) so it is no longer interactable
+        yield return new WaitForSeconds(0.5f); // Adjust based on animation length
         door.layer = LayerMask.NameToLayer("Default");
     }
 
-
-
-    private void AddItemToInventory(GameObject item) {
-        inventorySystem.AddItem(item);  // Add item to InventorySystem
-    }
-
-    #region Mannequin
     private void CollectMannequinPart(GameObject part) {
-        // Determine the part type and update the MannequinInventoryManager
-        string partName = part.name;  // Expect names like "MannequinArm", "MannequinHead", "MannequinLeg"
+        string partName = part.name;  // Example: "MannequinArm", "MannequinHead", "MannequinLeg"
         mannequinInventoryManager.CollectPart(partName);
 
-        // Destroy the part in the scene since it has been collected
+        // Remove the part from the scene after collecting
         Destroy(part);
     }
 
@@ -96,13 +116,15 @@ public class Interactor : MonoBehaviour {
         // Check if the player has the required part in the inventory
         bool hasRequiredPart = mannequinInventoryManager.HasPart(requiredPart);
         if (hasRequiredPart) {
-            Debug.Log($"Attempting to restore {requiredPart} on {mannequin.name}.");
-
-            // Call RestorePart in MannequinInventoryManager, passing the part and mannequin GameObject
+            Debug.Log($"Restoring {requiredPart} to {mannequin.name}.");
             mannequinInventoryManager.RestorePart(requiredPart, mannequin);
         } else {
             Debug.Log("Player does not have the required part: " + requiredPart);
         }
+    }
+
+    private void AddItemToInventory(GameObject item) {
+        inventorySystem.AddItem(item);  // Add item to the player's inventory
     }
 
     private string GetRequiredPartForMannequin(string mannequinName) {
@@ -117,7 +139,4 @@ public class Interactor : MonoBehaviour {
                 return null;
         }
     }
-    #endregion
-
-
 }

@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367926ac0edac5d458480ef1f0e04af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipInfo: {fileID: 11400000, guid: 92e75aac450fbe24bb89bc9839e15205, type: 2}
-  requiredPartName: 
+  tooltipInfo: {fileID: 11400000, guid: bdb398880d934e644ad28f674a71fcf0, type: 2}
+  requiredPartName: GraveStoneKey
 --- !u!65 &1607475495137549043
 BoxCollider:
   m_ObjectHideFlags: 0

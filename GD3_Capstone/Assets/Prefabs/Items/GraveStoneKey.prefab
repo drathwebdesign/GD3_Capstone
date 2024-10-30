@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 6309043913074889425}
   - component: {fileID: 8018539174084534452}
   m_Layer: 7
-  m_Name: GraveyardKey
+  m_Name: GraveStoneKey
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
