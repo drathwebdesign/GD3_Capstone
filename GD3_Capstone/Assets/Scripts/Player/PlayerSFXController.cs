@@ -22,6 +22,7 @@ public class PlayerSFX : MonoBehaviour
 
     [SerializeField] AudioClip mannequin1;
     [SerializeField] AudioClip strangelyCompelled;
+    
 
 
     [SerializeField] AudioClip graveyardNarration1;
@@ -166,7 +167,7 @@ public class PlayerSFX : MonoBehaviour
             
         }
 
-        if (other.transform.name == "MannequinMH"  && mannequinProgress == 1)
+        if ((other.transform.name == "LeglessTriggerBox"|| other.transform.name == "ArmlessTriggerBox" || other.transform.name == "HeadlessTriggerBox") && mannequinProgress == 1)
         {
             SoundFXManager.Instance.PlaySoundFXClip(1, strangelyCompelled, transform, 1f);
             mannequinProgress++;
