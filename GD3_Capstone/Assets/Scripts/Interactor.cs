@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Interactor : MonoBehaviour {
     [SerializeField] InventorySystem inventorySystem;  // Reference to the main inventory system
@@ -34,14 +35,37 @@ public class Interactor : MonoBehaviour {
     }
 
     private void OpenDoor(GameObject door) {
-        Animator doorAnimator = door.GetComponent<Animator>();
-        if (doorAnimator != null) {
-            // Trigger the animation for opening the door
-            doorAnimator.SetTrigger("Open");
+        // Check if the door object has child animators (for double doors) or its own animator (for single doors)
+        Animator[] childAnimators = door.GetComponentsInChildren<Animator>();
+        Animator singleAnimator = door.GetComponent<Animator>();
+
+        if (childAnimators.Length > 1) {
+            // This is a double door setup with child animators
+            foreach (Animator animator in childAnimators) {
+                animator.SetTrigger("Open");
+            }
+            // Set the layer of the parent door to Default after opening
+            StartCoroutine(SetLayerToDefaultAfterAnimation(door));
+        } else if (singleAnimator != null) {
+            // This is a single door setup with its own animator
+            singleAnimator.SetTrigger("Open");
+            // Set the layer of the single door to Default after opening
+            StartCoroutine(SetLayerToDefaultAfterAnimation(door));
         } else {
             Debug.LogWarning("The door does not have an Animator component.");
         }
     }
+
+    // Coroutine to wait for the animation to start and then set the layer to Default
+    private IEnumerator SetLayerToDefaultAfterAnimation(GameObject door) {
+        // Wait for the animation duration or a short delay (adjust as needed)
+        yield return new WaitForSeconds(0.5f); // Change this value based on the animation length
+
+        // Set the door or door parent layer to Default (layer 0) so it is no longer interactable
+        door.layer = LayerMask.NameToLayer("Default");
+    }
+
+
 
     private void AddItemToInventory(GameObject item) {
         inventorySystem.AddItem(item);  // Add item to InventorySystem
