@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3317654}
   - component: {fileID: 2301832}
   - component: {fileID: 6424572}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Struct_Docking_A_DM_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,6 +59,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -118,7 +121,7 @@ GameObject:
   - component: {fileID: 3354648}
   - component: {fileID: 2354242}
   - component: {fileID: 6448940}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Struct_Docking_A_DM_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,6 +168,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -222,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402548}
   - component: {fileID: 20553570}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Struct_Docking_A_DM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +292,7 @@ GameObject:
   - component: {fileID: 3358294}
   - component: {fileID: 2354646}
   - component: {fileID: 6459382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Struct_Docking_A_DM_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,6 +339,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
