@@ -11,7 +11,18 @@ public class MannequinInventoryManager : MonoBehaviour {
     public GameObject headTick;              // Tick mark for head when restored
     public GameObject legTick;               // Tick mark for leg when restored
 
+    public Transform playerTransform;
+
     [SerializeField] private GameObject keyObject;  // Key GameObject to activate once all mannequins are restored
+
+    //narration for the puzzle
+
+    [SerializeField] AudioClip collectArm;
+    [SerializeField] AudioClip collectLeg;
+    [SerializeField] AudioClip collectHead;
+    [SerializeField] AudioClip comfort1;
+    
+
 
     private bool armCollected = false;
     private bool headCollected = false;
@@ -32,6 +43,8 @@ public class MannequinInventoryManager : MonoBehaviour {
         }
     }
 
+    
+
     public void EnterMannequinHouse() {
         mannequinHouseCanvas.SetActive(true);  // Show the canvas
         UpdateUI();                            // Update the UI to current part status
@@ -47,14 +60,17 @@ public class MannequinInventoryManager : MonoBehaviour {
             case "MannequinArm":
                 armCollected = true;
                 armImage.color = Color.white;  // Change color to white to indicate it's collected
+                SoundFXManager.Instance.PlaySoundFXClip(1, collectArm, playerTransform, 1f);
                 break;
             case "MannequinHead":
                 headCollected = true;
                 headImage.color = Color.white;  // Change color to white
+                SoundFXManager.Instance.PlaySoundFXClip(1, collectHead, playerTransform, 1f);
                 break;
             case "MannequinLeg":
                 legCollected = true;
                 legImage.color = Color.white;  // Change color to white
+                SoundFXManager.Instance.PlaySoundFXClip(1, collectLeg, playerTransform, 1f);
                 break;
         }
 
@@ -82,6 +98,10 @@ public class MannequinInventoryManager : MonoBehaviour {
         if (partTransform != null) {
             partTransform.gameObject.SetActive(true);  // Set the missing part active
             Debug.Log($"{partName} part activated on {mannequin.name}.");
+            if (restoredMannequinsCount < 3)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(1, comfort1, playerTransform, 1f);              
+            }
         } else {
             Debug.LogWarning($"Part '{partName}' not found on mannequin '{mannequin.name}'. Please check hierarchy and naming.");
         }
