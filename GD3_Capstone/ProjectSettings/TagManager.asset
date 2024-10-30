@@ -10,6 +10,7 @@ TagManager:
   - MannequinBroken
   - Door
   - Item
+  - GraveStone
   layers:
   - Default
   - TransparentFX

@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class PlayerSFX : MonoBehaviour
 {
+
+
     public int storyProgress;
     public int graveyardProgress;
     public int houseProgress;
     public int cabinProgress;
+    public int mannequinProgress;
 
     public float VolumeQuiet = 0.3f;
     public float VolumeLoud = 1;
@@ -16,7 +19,11 @@ public class PlayerSFX : MonoBehaviour
     [SerializeField] AudioClip somethingTerrible;  
     [SerializeField] AudioClip someoneWatching;
     [SerializeField] AudioClip iSenseAPresence;
-  
+
+    [SerializeField] AudioClip mannequin1;
+    [SerializeField] AudioClip strangelyCompelled;
+    
+
 
     [SerializeField] AudioClip graveyardNarration1;
     [SerializeField] AudioClip graveyardNarration2;
@@ -27,12 +34,18 @@ public class PlayerSFX : MonoBehaviour
 
     [SerializeField] AudioClip pianoMusic;
 
+    [SerializeField] AudioClip mainHouse1;
+    [SerializeField] AudioClip mainHouse2;
+    [SerializeField] AudioClip mainHouse3;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         storyProgress = 0;
         graveyardProgress = 0;
         SoundFXManager.Instance.PlaySoundFXClip(1,pianoMusic, transform, 0.03f);
+        
     }
 
     // Update is called once per frame
@@ -136,14 +149,30 @@ public class PlayerSFX : MonoBehaviour
             }
         }
 
-//        if (other.transform.name == "SpawnToMainBridgeTrigger")
-//        {
-//            if (storyProgress == 2)
-//            {
-//                SoundFXManager.Instance.PlaySoundFXClip(1, someoneWatching, transform, VolumeLoud);
-//                storyProgress++;
-//            }
-//        }
+        //        if (other.transform.name == "SpawnToMainBridgeTrigger")
+        //        {
+        //            if (storyProgress == 2)
+        //            {
+        //                SoundFXManager.Instance.PlaySoundFXClip(1, someoneWatching, transform, VolumeLoud);
+        //                storyProgress++;
+        //            }
+        //        }
+
+        //mannequin triggers
+
+        if (other.transform.name == "MannequinHouse" && mannequinProgress == 0)
+        {
+                SoundFXManager.Instance.PlaySoundFXClip(1, mannequin1, transform, 1f);
+                mannequinProgress++;
+            
+        }
+
+        if ((other.transform.name == "LeglessTriggerBox"|| other.transform.name == "ArmlessTriggerBox" || other.transform.name == "HeadlessTriggerBox") && mannequinProgress == 1)
+        {
+            SoundFXManager.Instance.PlaySoundFXClip(1, strangelyCompelled, transform, 1f);
+            mannequinProgress++;
+
+        }
 
         //graveyard triggers
 
@@ -185,7 +214,15 @@ public class PlayerSFX : MonoBehaviour
             {
                 SoundFXManager.Instance.PlaySoundFXClip(1,houseNarration1, transform, VolumeQuiet);
                 houseProgress++;
-            }
+            }         
+
+        }
+
+        if (other.transform.name == "Box Volume")
+        {
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse1, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse2, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse3, transform, VolumeQuiet);
         }
     }
 } 

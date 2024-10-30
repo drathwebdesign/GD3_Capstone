@@ -33,6 +33,6 @@ public class FootStepsSystem : MonoBehaviour {
         previousIndex = index;
 
         // Play the selected sound through the SoundFXManager
-        SoundFXManager.Instance.PlaySoundFXClip(0, footstepArray[index], transform, 1f);
+        SoundFXManager.Instance.PlaySoundFXClip(0, footstepArray[index], transform, 0.1f);
     }
 }
