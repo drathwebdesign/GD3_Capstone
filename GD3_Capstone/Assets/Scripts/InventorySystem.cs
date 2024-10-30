@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour {
     public List<GameObject> inventory;
-    private GameObject currentHeldObject;
+    public GameObject currentHeldObject;
     private int maxHotbarItems = 8;
     [SerializeField] Transform itemContainer;  // ItemContainer positioned in front of the player
 
