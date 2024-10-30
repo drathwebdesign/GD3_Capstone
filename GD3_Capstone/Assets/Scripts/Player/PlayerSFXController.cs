@@ -22,6 +22,7 @@ public class PlayerSFX : MonoBehaviour
 
     [SerializeField] AudioClip mannequin1;
     [SerializeField] AudioClip strangelyCompelled;
+    
 
 
     [SerializeField] AudioClip graveyardNarration1;
@@ -32,7 +33,11 @@ public class PlayerSFX : MonoBehaviour
     [SerializeField] AudioClip houseNarration1;
 
     [SerializeField] AudioClip pianoMusic;
-    
+
+    [SerializeField] AudioClip mainHouse1;
+    [SerializeField] AudioClip mainHouse2;
+    [SerializeField] AudioClip mainHouse3;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -162,7 +167,7 @@ public class PlayerSFX : MonoBehaviour
             
         }
 
-        if (other.transform.name == "MannequinMH"  && mannequinProgress == 1)
+        if ((other.transform.name == "LeglessTriggerBox"|| other.transform.name == "ArmlessTriggerBox" || other.transform.name == "HeadlessTriggerBox") && mannequinProgress == 1)
         {
             SoundFXManager.Instance.PlaySoundFXClip(1, strangelyCompelled, transform, 1f);
             mannequinProgress++;
@@ -209,7 +214,15 @@ public class PlayerSFX : MonoBehaviour
             {
                 SoundFXManager.Instance.PlaySoundFXClip(1,houseNarration1, transform, VolumeQuiet);
                 houseProgress++;
-            }
+            }         
+
+        }
+
+        if (other.transform.name == "Box Volume")
+        {
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse1, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse2, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse3, transform, VolumeQuiet);
         }
     }
 } 
