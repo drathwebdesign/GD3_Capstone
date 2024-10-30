@@ -17679,6 +17679,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6084424999274275994, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1705732543}
+    - targetCorrespondingSourceObject: {fileID: 6084424999274275994, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1705732544}
     - targetCorrespondingSourceObject: {fileID: 795234956490175583, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1663080439}
@@ -18239,6 +18242,40 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1705732544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705732525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c03e50e6109f194e90128ca99e255aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyProgress: 0
+  graveyardProgress: 0
+  houseProgress: 0
+  cabinProgress: 0
+  mannequinProgress: 0
+  VolumeQuiet: 0.3
+  VolumeLoud: 1
+  narration1: {fileID: 0}
+  itStinks: {fileID: 0}
+  somethingTerrible: {fileID: 0}
+  someoneWatching: {fileID: 0}
+  iSenseAPresence: {fileID: 0}
+  mannequin1: {fileID: 0}
+  strangelyCompelled: {fileID: 0}
+  graveyardNarration1: {fileID: 0}
+  graveyardNarration2: {fileID: 0}
+  cabinNarration1: {fileID: 0}
+  houseNarration1: {fileID: 0}
+  pianoMusic: {fileID: 0}
+  mainHouse1: {fileID: 0}
+  mainHouse2: {fileID: 0}
+  mainHouse3: {fileID: 0}
 --- !u!1001 &1718948086
 PrefabInstance:
   m_ObjectHideFlags: 0
