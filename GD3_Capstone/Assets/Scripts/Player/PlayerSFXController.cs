@@ -32,7 +32,11 @@ public class PlayerSFX : MonoBehaviour
     [SerializeField] AudioClip houseNarration1;
 
     [SerializeField] AudioClip pianoMusic;
-    
+
+    [SerializeField] AudioClip mainHouse1;
+    [SerializeField] AudioClip mainHouse2;
+    [SerializeField] AudioClip mainHouse3;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -209,7 +213,15 @@ public class PlayerSFX : MonoBehaviour
             {
                 SoundFXManager.Instance.PlaySoundFXClip(1,houseNarration1, transform, VolumeQuiet);
                 houseProgress++;
-            }
+            }         
+
+        }
+
+        if (other.transform.name == "Box Volume")
+        {
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse1, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse2, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse3, transform, VolumeQuiet);
         }
     }
 } 
