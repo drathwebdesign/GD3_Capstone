@@ -6,7 +6,6 @@ public class FootStepsSystem : MonoBehaviour {
     [SerializeField] PlayerMovement playerMovement; // Reference to PlayerMovement script
 
     [Header("Audio")]
-    [SerializeField] AudioSource playerAudioSource;
     [SerializeField] AudioClip[] outdoorFootStepsArray; // Outdoor footsteps
     [SerializeField] AudioClip[] indoorFootStepsArray;  // Indoor footsteps
 
@@ -27,12 +26,13 @@ public class FootStepsSystem : MonoBehaviour {
     void PlaySoundsBySurface() {
         AudioClip[] footstepArray = playerMovement.isIndoors ? indoorFootStepsArray : outdoorFootStepsArray;
 
+        // Choose a random index and ensure it's not the same as the last one
         int index = Random.Range(0, footstepArray.Length);
-        previousIndex = index;
-
         if (previousIndex == index && index < footstepArray.Length - 1)
             index++;
+        previousIndex = index;
 
-        playerAudioSource.PlayOneShot(footstepArray[index]);
+        // Play the selected sound through the SoundFXManager
+        SoundFXManager.Instance.PlaySoundFXClip(0, footstepArray[index], transform, 1f);
     }
 }

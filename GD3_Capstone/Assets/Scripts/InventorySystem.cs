@@ -74,6 +74,12 @@ public class InventorySystem : MonoBehaviour {
             itemScript.enabled = false;
         }
 
+        // Disable Collider
+        Collider collider = newItem.GetComponent<Collider>();
+        if (collider != null) {
+            collider.enabled = false;  // Turn off the collider
+        }
+
         currentHeldObject = newItem;
         currentHeldObject.SetActive(true);  // Activate the new item
     }
