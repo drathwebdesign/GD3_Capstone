@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.UI;
 
 public class Interactor : MonoBehaviour {
     [SerializeField] private InventorySystem inventorySystem;  // Reference to the main inventory system
@@ -7,9 +8,17 @@ public class Interactor : MonoBehaviour {
     [SerializeField] private TooltipDisplay tooltipDisplay;  // Reference to the tooltip display system
     [SerializeField] private LayerMask whatIsInteractable;
     [SerializeField] private float range = 2f;
+    public Animator diggingAnimation;
+    private AudioSource audioSource;
+    public AudioClip DiggingSound;
+
 
     private GameObject objectInHands = null;
 
+    void Start ()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
             if (Physics.Raycast(transform.position, transform.forward, out RaycastHit interactable, range, whatIsInteractable)) {
@@ -45,6 +54,8 @@ public class Interactor : MonoBehaviour {
             if (targetObject != null) {
                 targetObject.SetActive(true);  // Activate the target object
                 activator.hasBeenActivated = true;  // Mark the interaction as completed
+                audioSource.PlayOneShot(DiggingSound);
+                PlayDiggingAnimation();
                 Debug.Log("GraveStone interaction successful! The target object has been activated.");
             } else {
                 Debug.LogWarning("No target object is set for this GraveStone.");
@@ -163,6 +174,15 @@ public class Interactor : MonoBehaviour {
                 return "MannequinHead";
             default:
                 return null;
+        }
+    }
+
+    public void PlayDiggingAnimation()
+    {
+        { 
+            diggingAnimation.enabled = true;
+            Debug.Log("Playing digging animation");
+
         }
     }
 }
