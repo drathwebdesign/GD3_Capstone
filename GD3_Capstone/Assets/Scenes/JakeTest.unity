@@ -7921,15 +7921,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.75
+      value: 293
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.17
+      value: -0.089
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66.3
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10238,6 +10238,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1236270264}
     - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: comfort1
+      value: 
+      objectReference: {fileID: 8300000, guid: fb1bae38399f65b49afbec6f762e733b, type: 3}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
       propertyPath: headTick
       value: 
       objectReference: {fileID: 1236270260}
@@ -10253,6 +10257,22 @@ PrefabInstance:
       propertyPath: keyObject
       value: 
       objectReference: {fileID: 310805998}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: collectArm
+      value: 
+      objectReference: {fileID: 8300000, guid: fb1bae38399f65b49afbec6f762e733b, type: 3}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: collectLeg
+      value: 
+      objectReference: {fileID: 8300000, guid: fb1bae38399f65b49afbec6f762e733b, type: 3}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: collectHead
+      value: 
+      objectReference: {fileID: 8300000, guid: fb1bae38399f65b49afbec6f762e733b, type: 3}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1705732539}
     - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
       propertyPath: mannequinHouseCanvas
       value: 
