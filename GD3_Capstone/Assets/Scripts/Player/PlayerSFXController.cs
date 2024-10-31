@@ -31,6 +31,7 @@ public class PlayerSFX : MonoBehaviour
     [SerializeField] AudioClip cabinNarration1;
 
     [SerializeField] AudioClip houseNarration1;
+    [SerializeField] AudioClip houseNarrationFinal;
 
     [SerializeField] AudioClip pianoMusic;
 
@@ -215,6 +216,15 @@ public class PlayerSFX : MonoBehaviour
                 SoundFXManager.Instance.PlaySoundFXClip(1,houseNarration1, transform, VolumeQuiet);
                 houseProgress++;
             }         
+
+        }
+
+        if (other.transform.name == "MainHouseEntranceTrigger")
+        {
+           
+                SoundFXManager.Instance.PlaySoundFXClip(1, houseNarrationFinal, transform, VolumeQuiet);
+                
+           
 
         }
 

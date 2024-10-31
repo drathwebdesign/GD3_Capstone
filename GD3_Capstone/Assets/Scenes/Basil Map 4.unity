@@ -1934,6 +1934,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 425724, guid: 953345a209e4fe7428046236259c9c7f, type: 3}
   m_PrefabInstance: {fileID: 90009968}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &94932771
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 729840486}
+    m_Modifications:
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -50.529724
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 880.7029
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 178.3031
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999685
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.007941151
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036132494249967582, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+      propertyPath: m_Name
+      value: MainHouseEntranceTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+--- !u!4 &94932772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2659836392855687646, guid: 923329dd2dbad9f4fa073b2ed3a0db5f, type: 3}
+  m_PrefabInstance: {fileID: 94932771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &102726119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11717,9 +11779,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8588930843307161079, guid: a2bc345f71f19b54581f15036523ec14, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 94932772}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2bc345f71f19b54581f15036523ec14, type: 3}
+--- !u!4 &729840486 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8588930843307161079, guid: a2bc345f71f19b54581f15036523ec14, type: 3}
+  m_PrefabInstance: {fileID: 729840485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &736245604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 462708, guid: 041b5985f303614469cc18a9f5eca9d3, type: 3}
@@ -29210,6 +29280,7 @@ MonoBehaviour:
   graveyardNarration2: {fileID: 8300000, guid: baa62b70d3bc71b4bb0bca5a167e3d4d, type: 3}
   cabinNarration1: {fileID: 8300000, guid: 4c9d80130d12fe546af1f253e2624ed8, type: 3}
   houseNarration1: {fileID: 8300000, guid: f97bca8d4b36dee42b311708f9453301, type: 3}
+  houseNarrationFinal: {fileID: 0}
   pianoMusic: {fileID: 8300000, guid: 8db8368e7d3824a4b8a20491804209ae, type: 3}
   mainHouse1: {fileID: 8300000, guid: 1237b9bddda66ea4aadd71f2f9162eb3, type: 3}
   mainHouse2: {fileID: 8300000, guid: 38aa61a534e1e674ca5a403e01a05e45, type: 3}
