@@ -24135,6 +24135,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1236270264}
     - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: comfort1
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b125b77efb69634a9f591466d4d993b, type: 3}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
       propertyPath: headTick
       value: 
       objectReference: {fileID: 1236270260}
@@ -24150,6 +24154,22 @@ PrefabInstance:
       propertyPath: keyObject
       value: 
       objectReference: {fileID: 310805998}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: collectArm
+      value: 
+      objectReference: {fileID: 8300000, guid: 47a584097a98ef94ea73b0be921cd7ea, type: 3}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: collectLeg
+      value: 
+      objectReference: {fileID: 8300000, guid: b90fd4a16dddfbd45a8df42ed56e3a28, type: 3}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: collectHead
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b1cf8371bb83f64ebe34251063aac15, type: 3}
+    - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1705732539}
     - target: {fileID: 4465487320969369537, guid: 73e73df04c1d55440b53af8ecbc255c2, type: 3}
       propertyPath: mannequinHouseCanvas
       value: 
