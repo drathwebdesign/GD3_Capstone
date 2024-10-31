@@ -21,6 +21,8 @@ public class TooltipDisplay : MonoBehaviour {
                 HandleDoorTooltip(hit.collider.GetComponent<TooltipTrigger>());
             } else if (hit.collider.CompareTag("Item") || hit.collider.CompareTag("MannequinPart")) {
                 HandleItemOrPartTooltip(hit.collider.GetComponent<TooltipTrigger>());  // Use general TooltipTrigger for items
+            } else if (hit.collider.CompareTag("GraveStone")) {
+                HandleGraveStoneTooltip(hit.collider.GetComponent<TooltipTrigger>());
             }
         } else {
             HideTooltip(); // Hide tooltip when nothing is in range
@@ -39,6 +41,16 @@ public class TooltipDisplay : MonoBehaviour {
             bool hasRequiredKey = inventorySystem.currentHeldObject != null &&
                                   inventorySystem.currentHeldObject.name == tooltipTrigger.requiredPartName;
             ShowTooltip(tooltipTrigger.tooltipInfo, hasRequiredKey);
+        }
+    }
+
+    private void HandleGraveStoneTooltip(TooltipTrigger tooltipTrigger) {
+        if (tooltipTrigger != null) {
+            // Check if the player is holding the Shovel
+            bool hasShovel = inventorySystem.currentHeldObject != null &&
+                             inventorySystem.currentHeldObject.name == "Shovel";
+
+            ShowTooltip(tooltipTrigger.tooltipInfo, hasShovel);
         }
     }
 
