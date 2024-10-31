@@ -1,2 +1,27 @@
 fileFormatVersion: 2
 guid: 0c03e50e6109f194e90128ca99e255aa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - narration1: {fileID: 8300000, guid: 253cff15b21b8ff4881da7c42262c3f8, type: 3}
+  - itStinks: {fileID: 8300000, guid: 200152eaf0012344b8b3b870e51b593c, type: 3}
+  - somethingTerrible: {fileID: 8300000, guid: 31a9789b09ffa30438b1251628079cf8, type: 3}
+  - someoneWatching: {fileID: 8300000, guid: 7513ca8d4a4ed9f45bce5b365c15c25a, type: 3}
+  - iSenseAPresence: {fileID: 8300000, guid: 3cae3bb84f71421448c0d54155a12dfc, type: 3}
+  - mannequin1: {fileID: 8300000, guid: 2a07fa27d768a70478d6a9ccd5cd7bf4, type: 3}
+  - strangelyCompelled: {fileID: 8300000, guid: 0263561529950a44b9f0d212c08a050b, type: 3}
+  - graveyardNarration1: {fileID: 8300000, guid: 9c1527a4e218e3b42bed3af3b96a5b00, type: 3}
+  - graveyardNarration2: {fileID: 8300000, guid: baa62b70d3bc71b4bb0bca5a167e3d4d, type: 3}
+  - cabinNarration1: {fileID: 8300000, guid: 5ba02c90ba5bc0e46ac5eb294f36d7ac, type: 3}
+  - houseNarration1: {fileID: 8300000, guid: f97bca8d4b36dee42b311708f9453301, type: 3}
+  - houseNarrationFinal: {fileID: 8300000, guid: dddddb19f6be773448d25368065f8a5e, type: 3}
+  - pianoMusic: {fileID: 8300000, guid: 8db8368e7d3824a4b8a20491804209ae, type: 3}
+  - mainHouse1: {fileID: 8300000, guid: 1237b9bddda66ea4aadd71f2f9162eb3, type: 3}
+  - mainHouse2: {fileID: 8300000, guid: 38aa61a534e1e674ca5a403e01a05e45, type: 3}
+  - mainHouse3: {fileID: 8300000, guid: 05213211007a65c4e85ecbb731fdf76b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

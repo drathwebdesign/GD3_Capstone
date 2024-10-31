@@ -7,9 +7,17 @@ public class Interactor : MonoBehaviour {
     [SerializeField] private TooltipDisplay tooltipDisplay;  // Reference to the tooltip display system
     [SerializeField] private LayerMask whatIsInteractable;
     [SerializeField] private float range = 2f;
+    public Animator diggingAnimation;
+    private AudioSource audioSource;
+    public AudioClip DiggingSound;
+
 
     private GameObject objectInHands = null;
 
+    void Start ()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
             if (Physics.Raycast(transform.position, transform.forward, out RaycastHit interactable, range, whatIsInteractable)) {
@@ -24,8 +32,37 @@ public class Interactor : MonoBehaviour {
                     HandleDoorInteraction(objectInHands);  // Door interaction
                 } else if (objectInHands.CompareTag("Item")) {
                     AddItemToInventory(objectInHands);   // Pick up a regular item
+                } else if (objectInHands.CompareTag("GraveStone")) {
+                    HandleGraveStoneInteraction(objectInHands);  // GraveStone interaction function
                 }
             }
+        }
+    }
+
+    private void HandleGraveStoneInteraction(GameObject graveStone) {
+        // Check if the player is holding the Shovel
+        bool hasShovel = inventorySystem.currentHeldObject != null &&
+                         inventorySystem.currentHeldObject.name == "Shovel";
+
+        TargetObjectActivator activator = graveStone.GetComponent<TargetObjectActivator>();
+
+        // Proceed only if the player has the shovel and the interaction has not already occurred
+        if (hasShovel && activator != null && !activator.hasBeenActivated) {
+            // Activate the specified object and mark it as interacted
+            GameObject targetObject = activator.targetObject;
+            if (targetObject != null) {
+                targetObject.SetActive(true);  // Activate the target object
+                activator.hasBeenActivated = true;  // Mark the interaction as completed
+                audioSource.PlayOneShot(DiggingSound);
+                PlayDiggingAnimation();
+                Debug.Log("GraveStone interaction successful! The target object has been activated.");
+            } else {
+                Debug.LogWarning("No target object is set for this GraveStone.");
+            }
+        } else if (!hasShovel) {
+            Debug.Log("You need the Shovel in hand to interact with the GraveStone.");
+        } else if (activator != null && activator.hasBeenActivated) {
+            Debug.Log("This GraveStone has already been dug up.");
         }
     }
 
@@ -136,6 +173,15 @@ public class Interactor : MonoBehaviour {
                 return "MannequinHead";
             default:
                 return null;
+        }
+    }
+
+    public void PlayDiggingAnimation()
+    {
+        { 
+            diggingAnimation.enabled = true;
+            Debug.Log("Playing digging animation");
+
         }
     }
 }
