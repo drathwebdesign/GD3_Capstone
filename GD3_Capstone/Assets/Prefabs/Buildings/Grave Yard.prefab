@@ -338,7 +338,6 @@ Transform:
   - {fileID: 7359174663601529427}
   - {fileID: 7728314168990404997}
   - {fileID: 4418427554835991604}
-  - {fileID: 7999721903564966247}
   - {fileID: 7873794969432638548}
   - {fileID: 8162546118619496548}
   - {fileID: 6970798464311385816}
@@ -434,6 +433,7 @@ Transform:
   - {fileID: 8679094478224359816}
   - {fileID: 1623881573026576368}
   - {fileID: 7993087556599774552}
+  - {fileID: 7999721903564966247}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6769195522082265873
@@ -8669,11 +8669,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8679094478224359816}
+    m_TransformParent: {fileID: 1414473640849286296}
     m_Modifications:
     - target: {fileID: 105984, guid: 1eb5970d54060cd4fa9d893223f463e4, type: 3}
       propertyPath: m_Name
-      value: Prop_Gravestone_A (2)
+      value: InteractableGraveStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 105984, guid: 1eb5970d54060cd4fa9d893223f463e4, type: 3}
+      propertyPath: m_TagString
+      value: GraveStone
       objectReference: {fileID: 0}
     - target: {fileID: 484950, guid: 1eb5970d54060cd4fa9d893223f463e4, type: 3}
       propertyPath: m_LocalPosition.x
