@@ -7,9 +7,12 @@ public class PlayerSFX : MonoBehaviour
 
     public int storyProgress;
     public int graveyardProgress;
+    public int churchProgress;
     public int houseProgress;
     public int cabinProgress;
     public int mannequinProgress;
+
+    public bool finalSceneTriggered;
 
     public float VolumeQuiet = 0.3f;
     public float VolumeLoud = 1;
@@ -22,11 +25,14 @@ public class PlayerSFX : MonoBehaviour
 
     [SerializeField] AudioClip mannequin1;
     [SerializeField] AudioClip strangelyCompelled;
-    
+
+    [SerializeField] AudioClip holdOn;
+
 
 
     [SerializeField] AudioClip graveyardNarration1;
     [SerializeField] AudioClip graveyardNarration2;
+    [SerializeField] AudioClip theKillerClue;
 
     [SerializeField] AudioClip cabinNarration1;
 
@@ -45,6 +51,7 @@ public class PlayerSFX : MonoBehaviour
     {
         storyProgress = 0;
         graveyardProgress = 0;
+        finalSceneTriggered = false;
         SoundFXManager.Instance.PlaySoundFXClip(1,pianoMusic, transform, 0.03f);
         
     }
@@ -134,7 +141,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 2)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, iSenseAPresence, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(1, holdOn, transform, VolumeQuiet);
                 storyProgress++;
             }
         }
@@ -163,7 +170,7 @@ public class PlayerSFX : MonoBehaviour
 
         if (other.transform.name == "MannequinHouse" && mannequinProgress == 0)
         {
-                SoundFXManager.Instance.PlaySoundFXClip(1, mannequin1, transform, 1f);
+                SoundFXManager.Instance.PlaySoundFXClip(1, mannequin1, transform, VolumeQuiet);
                 mannequinProgress++;
             
         }
@@ -195,6 +202,17 @@ public class PlayerSFX : MonoBehaviour
             }
         }
 
+        // church triggers
+
+        if (other.transform.name == "ChurchTrigger")
+        {
+            if (churchProgress == 0)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(1, theKillerClue, transform, VolumeQuiet);
+                graveyardProgress++;
+            }
+        }
+
         // cabin triggers
 
         if (other.transform.name == "CabinTrigger")
@@ -219,12 +237,14 @@ public class PlayerSFX : MonoBehaviour
 
         }
 
-        if (other.transform.name == "MainHouseEntranceTrigger")
+        if (other.transform.name == "MainHouseEntranceTrigger" && finalSceneTriggered == false)
         {
-           
+                finalSceneTriggered = true;
                 SoundFXManager.Instance.PlaySoundFXClip(1, houseNarrationFinal, transform, VolumeQuiet);
-                
-           
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse1, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse2, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse3, transform, 0.1f);
+
 
         }
 
