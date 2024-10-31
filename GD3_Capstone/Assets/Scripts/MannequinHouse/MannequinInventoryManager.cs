@@ -73,7 +73,6 @@ public class MannequinInventoryManager : MonoBehaviour {
                 SoundFXManager.Instance.PlaySoundFXClip(1, collectLeg, playerTransform, 1f);
                 break;
         }
-
         UpdateUI();  // Update the UI immediately
     }
 
@@ -132,7 +131,6 @@ public class MannequinInventoryManager : MonoBehaviour {
             ActivateKey();
         }
     }
-
 
     private void ActivateKey() {
         if (keyObject != null) {
