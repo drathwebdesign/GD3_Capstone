@@ -1,4 +1,3 @@
-using Palmmedia.ReportGenerator.Core.Reporting.Builders;
 using UnityEngine;
 
 public class PlayerSFX : MonoBehaviour
@@ -52,8 +51,8 @@ public class PlayerSFX : MonoBehaviour
         storyProgress = 0;
         graveyardProgress = 0;
         finalSceneTriggered = false;
-        SoundFXManager.Instance.PlaySoundFXClip(1,pianoMusic, transform, 0.03f);
-        
+        SoundFXManager.Instance.PlaySoundFXClip(0, pianoMusic, transform, 0.1f);
+
     }
 
     // Update is called once per frame
@@ -72,7 +71,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, narration1, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, narration1, transform, 1f);
                 storyProgress++;
             }
         }
@@ -81,7 +80,7 @@ public class PlayerSFX : MonoBehaviour
         { 
             if  (storyProgress == 1)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, itStinks, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, itStinks, transform, 1f);
                 storyProgress++;
             }
 
@@ -101,7 +100,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 2)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, someoneWatching, transform, VolumeLoud);
+                SoundFXManager.Instance.PlaySoundFXClip(0, someoneWatching, transform, 1f);
                 storyProgress++;
             }
         }
@@ -112,7 +111,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 1)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, iSenseAPresence, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, iSenseAPresence, transform, 1f);
                 storyProgress++;
             }
         }
@@ -121,7 +120,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 2)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, iSenseAPresence, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, iSenseAPresence, transform, 1f);
                 storyProgress++;
             }
         }
@@ -132,7 +131,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 1)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, somethingTerrible, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, somethingTerrible, transform, 1f);
                 storyProgress++;
             }
         }
@@ -141,7 +140,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 2)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, holdOn, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, holdOn, transform, 1f);
                 storyProgress++;
             }
         }
@@ -152,7 +151,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (storyProgress == 1)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, somethingTerrible, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, somethingTerrible, transform, 1f);
                 storyProgress++;
             }
         }
@@ -170,14 +169,14 @@ public class PlayerSFX : MonoBehaviour
 
         if (other.transform.name == "MannequinHouse" && mannequinProgress == 0)
         {
-                SoundFXManager.Instance.PlaySoundFXClip(1, mannequin1, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, mannequin1, transform, 1f);
                 mannequinProgress++;
             
         }
 
         if ((other.transform.name == "LeglessTriggerBox"|| other.transform.name == "ArmlessTriggerBox" || other.transform.name == "HeadlessTriggerBox") && mannequinProgress == 1)
         {
-            SoundFXManager.Instance.PlaySoundFXClip(1, strangelyCompelled, transform, 1f);
+            SoundFXManager.Instance.PlaySoundFXClip(0, strangelyCompelled, transform, 1f);
             mannequinProgress++;
 
         }
@@ -188,7 +187,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (graveyardProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, graveyardNarration1, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration1, transform, 1f);
                 graveyardProgress++;
             }
         }
@@ -197,7 +196,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (graveyardProgress >0 && cabinProgress>0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, graveyardNarration2, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration2, transform, 1f);
                 graveyardProgress++;
             }
         }
@@ -208,7 +207,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (churchProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, theKillerClue, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, theKillerClue, transform, 1f);
                 graveyardProgress++;
             }
         }
@@ -219,7 +218,7 @@ public class PlayerSFX : MonoBehaviour
         {
             if (cabinProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1, cabinNarration1, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0, cabinNarration1, transform, 1f);
                 cabinProgress++;
             }
         }
@@ -231,7 +230,7 @@ public class PlayerSFX : MonoBehaviour
         { 
             if (houseProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(1,houseNarration1, transform, VolumeQuiet);
+                SoundFXManager.Instance.PlaySoundFXClip(0,houseNarration1, transform, 1f);
                 houseProgress++;
             }         
 
@@ -240,19 +239,19 @@ public class PlayerSFX : MonoBehaviour
         if (other.transform.name == "MainHouseEntranceTrigger" && finalSceneTriggered == false)
         {
                 finalSceneTriggered = true;
-                SoundFXManager.Instance.PlaySoundFXClip(1, houseNarrationFinal, transform, VolumeQuiet);
-            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse1, transform, VolumeQuiet);
-            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse2, transform, VolumeQuiet);
-            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse3, transform, 0.1f);
+                SoundFXManager.Instance.PlaySoundFXClip(0, houseNarrationFinal, transform, 1f);
+            SoundFXManager.Instance.PlaySoundFXClip(0, mainHouse1, transform, 0.1f);
+            SoundFXManager.Instance.PlaySoundFXClip(0, mainHouse2, transform, 0.1f);
+            SoundFXManager.Instance.PlaySoundFXClip(0, mainHouse3, transform, 0.1f);
 
 
         }
 
         if (other.transform.name == "Box Volume")
         {
-            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse1, transform, VolumeQuiet);
-            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse2, transform, VolumeQuiet);
-            SoundFXManager.Instance.PlaySoundFXClip(1, mainHouse3, transform, VolumeQuiet);
+            SoundFXManager.Instance.PlaySoundFXClip(0, mainHouse1, transform, 0.1f);
+            SoundFXManager.Instance.PlaySoundFXClip(0, mainHouse2, transform, 0.1f);
+            SoundFXManager.Instance.PlaySoundFXClip(0, mainHouse3, transform, 0.1f);
         }
     }
 } 

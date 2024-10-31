@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using Unity.UI;
 
 public class Interactor : MonoBehaviour {
     [SerializeField] private InventorySystem inventorySystem;  // Reference to the main inventory system
