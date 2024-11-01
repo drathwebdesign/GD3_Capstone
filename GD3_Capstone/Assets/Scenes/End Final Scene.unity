@@ -216,18 +216,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nThank you for playing Forsaken Island. We are a team of 4 developers
+  m_text: "\n\nThank you for playing What lies in the Fog! We are a team of 4 developers
     (SAMBO BAKE STUDIOS) and have been working on this game demo for 2 weeks for
-    our capstone project.\n\n<b>Credits </b>\n\n<b>Voice Acting </b>\n\nBasil Marpels\n\n<b>Writing
-    </b>\n\nBasil Marpels\n\n<b>Audio Design </b>\n\nBasil Marpels \n\n<b>Level Design
+    our capstone project.\n\n<b>Credits </b>\n\n<b>Voice Acting </b>\n\nBasil Marples\n\n<b>Writing
+    </b>\n\nBasil Marples\n\n<b>Audio Design </b>\n\nBasil Marples \n\n<b>Level Design
     </b>\n\nJake Bignell & Sam Dawson\n\n<b>Coding Lead </b> \n\nJake Bignell \n\n<b>Player
-    Controlls </b>\n\nBodgan Lupin\n\n<b>UI </b> \n\nSam Dawson & Jake Bignell\n\n<b>Visual
+    Controlls </b>\n\nBodgan Lupu\n\n<b>UI </b> \n\nSam Dawson & Jake Bignell\n\n<b>Visual
     Effects </b> \n\nSam Dawson \n\n<b>3D Design </b>\n\nAkshat Sinha\n\n<b>Third
     Party Assets </b>\n\nFlooded Grounds,  Gabies Assets, Kennys Particles, Mannequins
     & Screaming statues.\n\nBased on true events.....\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8ea486a943de3044b8db360f0b8080c1, type: 2}
+  m_sharedMaterial: {fileID: 2914962379868342842, guid: 8ea486a943de3044b8db360f0b8080c1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
