@@ -14,6 +14,7 @@ public class MannequinInventoryManager : MonoBehaviour {
     public Transform playerTransform;
 
     [SerializeField] private GameObject keyObject;  // Key GameObject to activate once all mannequins are restored
+    [SerializeField] private GameObject[] pointerMannequins;
 
     //narration for the puzzle
 
@@ -136,10 +137,20 @@ public class MannequinInventoryManager : MonoBehaviour {
         if (keyObject != null) {
             keyObject.SetActive(true);  // Activate the Key object
             Debug.Log("All mannequins restored! Key has been activated.");
+
+            // Activate all mannequins in the pointerMannequins array
+            foreach (GameObject mannequin in pointerMannequins) {
+                if (mannequin != null) {
+                    mannequin.SetActive(true);
+                } else {
+                    Debug.LogWarning("One of the pointerMannequins references is missing.");
+                }
+            }
         } else {
             Debug.LogWarning("Key object reference is missing. Please assign it in the Inspector.");
         }
     }
+
 
     private void UpdateUI() {
         // Update tick visibility based on restored status

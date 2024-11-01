@@ -17,6 +17,5 @@ public class CrawlerAI : MonoBehaviour {
             SoundFXManager.Instance.PlayRandomSoundFXClip(0, roarSoundClips, transform, 1f);
             timeSinceLastRoar = 0f;  // Reset the timer
         }
-        //SoundFXManager.Instance.PlaySoundFXClip(1, roarSoundClip, transform, 1f);
     }
 }

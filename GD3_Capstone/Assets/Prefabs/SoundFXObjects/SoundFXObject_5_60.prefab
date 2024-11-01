@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4473261298212141138}
   - component: {fileID: 7753288136405675940}
   m_Layer: 0
-  m_Name: SoundFXObject_5_20
+  m_Name: SoundFXObject_5_60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 5
-  MaxDistance: 20
+  MaxDistance: 60
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
