@@ -187,19 +187,19 @@ public class PlayerSFX : MonoBehaviour
         {
             if (graveyardProgress == 0)
             {
-                SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration1, transform, 1f);
-                graveyardProgress++;
-            }
-        }
-
-        if (other.transform.name == "GraveyardTrigger")
-        {
-            if (graveyardProgress >0 && cabinProgress>0)
-            {
                 SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration2, transform, 1f);
                 graveyardProgress++;
             }
         }
+
+ //       if (other.transform.name == "GraveyardTrigger")
+//        {
+ //           if (graveyardProgress >0 && cabinProgress>0)
+ //           {
+ //               SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration1, transform, 1f);
+ //               graveyardProgress++;
+ //           }
+ //       }
 
         // church triggers
 
