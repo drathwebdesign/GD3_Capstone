@@ -62,7 +62,7 @@ public class StalkerAIJB : MonoBehaviour {
         if (timeSinceLastRoar >= cooldownTimeRoar && !isRoaring) {
             isRoaring = true;
             timeSinceLastRoar = 0f;
-            SoundFXManager.Instance.PlayRandomSoundFXClip(1, roarSoundClips, transform, 1f);
+            SoundFXManager.Instance.PlayRandomSoundFXClip(0, roarSoundClips, transform, 1f);
             animator.SetTrigger("isRoaring");
             animator.SetBool("isWalking", false);
             Invoke("EndRoar", 2f);

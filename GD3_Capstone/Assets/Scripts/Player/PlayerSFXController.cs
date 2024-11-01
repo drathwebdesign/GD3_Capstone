@@ -50,7 +50,7 @@ public class PlayerSFX : MonoBehaviour
         storyProgress = 0;
         graveyardProgress = 0;
         finalSceneTriggered = false;
-        SoundFXManager.Instance.PlaySoundFXClip(0, pianoMusic, transform, 0.1f);
+        SoundFXManager.Instance.PlaySoundFXClip(0, pianoMusic, transform, 0.02f);
 
     }
 
