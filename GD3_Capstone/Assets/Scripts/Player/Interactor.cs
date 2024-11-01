@@ -48,11 +48,11 @@ public class Interactor : MonoBehaviour {
 
         // Proceed only if the player has the shovel and the interaction has not already occurred
         if (hasShovel && activator != null && !activator.hasBeenActivated) {
-            // Activate the specified object and mark it as interacted
-            GameObject targetObject = activator.targetObject;
-            if (targetObject != null) {
-                targetObject.SetActive(true);  // Activate the target object
-                activator.hasBeenActivated = true;  // Mark the interaction as completed
+            if (activator.targetObjects != null && activator.targetObjects.Length > 0) {
+                activator.ActivateTargets(); // Activate all target objects
+
+                // Mark the interaction as completed
+                activator.hasBeenActivated = true;
                 audioSource.PlayOneShot(DiggingSound);
                 PlayDiggingAnimation();
                 Debug.Log("GraveStone interaction successful! The target object has been activated.");
