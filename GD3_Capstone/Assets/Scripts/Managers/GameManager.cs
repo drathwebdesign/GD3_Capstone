@@ -36,4 +36,8 @@ public class GameManager : MonoBehaviour {
         // Load the game scene
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
+
+    public void ActivateFinalScene() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("End Final Scene"); // Replace with your final scene's name or index
+    }
 }
