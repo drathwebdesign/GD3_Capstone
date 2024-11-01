@@ -6,6 +6,7 @@ public class StalkerEnemy : MonoBehaviour
 {
     public float attackRange = 10f;
     public float appereanceDelay = 1f;
+    public float dissapearDelay = 1f;
     public float positionOffsetToPlayer = 5f;
     public bool isActive = true;
 
@@ -67,11 +68,15 @@ public class StalkerEnemy : MonoBehaviour
     }
     public void Appear()
     {
-        gameObject.SetActive(true);
+        StartCoroutine(SetEnemyEnabledDelay(true, appereanceDelay));
     }
     public void Dissapear()
     {
-        gameObject.SetActive(false);
-
+        StartCoroutine(SetEnemyEnabledDelay(false, dissapearDelay));
+    }
+    IEnumerator SetEnemyEnabledDelay(bool enemyEnabled, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        gameObject.SetActive(enemyEnabled);
     }
 }
