@@ -44,14 +44,13 @@ public class PlayerSFX : MonoBehaviour
     [SerializeField] AudioClip mainHouse2;
     [SerializeField] AudioClip mainHouse3;
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         storyProgress = 0;
         graveyardProgress = 0;
         finalSceneTriggered = false;
-        SoundFXManager.Instance.PlaySoundFXClip(0, pianoMusic, transform, 0.1f);
+        SoundFXManager.Instance.PlaySoundFXClip(0, pianoMusic, transform, 0.02f);
 
     }
 
@@ -76,7 +75,7 @@ public class PlayerSFX : MonoBehaviour
             }
         }
 
-            if (other.transform.name == "(1)TriggerRight(1)")
+        if (other.transform.name == "(1)TriggerRight(1)")
         { 
             if  (storyProgress == 1)
             {

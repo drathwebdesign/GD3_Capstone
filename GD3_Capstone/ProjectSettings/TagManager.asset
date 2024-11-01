@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Item
   - GraveStone
+  - StalkerSpawn
   layers:
   - Default
   - TransparentFX
