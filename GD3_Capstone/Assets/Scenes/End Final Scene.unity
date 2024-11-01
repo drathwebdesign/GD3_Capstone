@@ -226,8 +226,8 @@ MonoBehaviour:
     Party Assets </b>\n\nFlooded Grounds,  Gabies Assets, Kennys Particles, Mannequins
     & Screaming statues.\n\nBased on true events.....\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8ea486a943de3044b8db360f0b8080c1, type: 2}
-  m_sharedMaterial: {fileID: 2914962379868342842, guid: 8ea486a943de3044b8db360f0b8080c1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -740,7 +740,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 5e567aa19ec5d3f4fa90394dd88b9a61, type: 3}
   m_Resource: {fileID: 8300000, guid: 5e567aa19ec5d3f4fa90394dd88b9a61, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.043
+  m_Volume: 0.024
   m_Pitch: 1
   Loop: 0
   Mute: 0
