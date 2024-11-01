@@ -20754,6 +20754,7 @@ MonoBehaviour:
   theKillerClue: {fileID: 8300000, guid: 754e61203cad3694c96a1e90f5de1637, type: 3}
   cabinNarration1: {fileID: 8300000, guid: 5ba02c90ba5bc0e46ac5eb294f36d7ac, type: 3}
   houseNarration1: {fileID: 8300000, guid: f97bca8d4b36dee42b311708f9453301, type: 3}
+  ridOfThisCurse: {fileID: 8300000, guid: 83551e597ecec8745ad176c7f608a722, type: 3}
   houseNarrationFinal: {fileID: 8300000, guid: dddddb19f6be773448d25368065f8a5e, type: 3}
   pianoMusic: {fileID: 8300000, guid: 8db8368e7d3824a4b8a20491804209ae, type: 3}
   mainHouse1: {fileID: 8300000, guid: 1237b9bddda66ea4aadd71f2f9162eb3, type: 3}
