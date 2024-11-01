@@ -3438,6 +3438,10 @@ PrefabInstance:
       value: SpawnStalkerTrigger (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2276450667466724522, guid: a989513fe24bead41b61fecc34854c50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276450667466724522, guid: a989513fe24bead41b61fecc34854c50, type: 3}
       propertyPath: m_TagString
       value: StalkerSpawn
       objectReference: {fileID: 0}
@@ -5214,7 +5218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &390123091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7446,6 +7450,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 359169178}
     m_Modifications:
+    - target: {fileID: 2261503673709705813, guid: f082592d55ec10b4ebb734f0427aabdd, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2789118358066529305, guid: f082592d55ec10b4ebb734f0427aabdd, type: 3}
       propertyPath: m_Name
       value: StalkerJB (1)
@@ -13002,7 +13010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899217934317442452, guid: a989513fe24bead41b61fecc34854c50, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2276450667466724522, guid: a989513fe24bead41b61fecc34854c50, type: 3}
       propertyPath: m_Name
@@ -13096,7 +13104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1074578181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19502,15 +19510,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 74.34731
+      value: 200.13
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.167
+      value: 9.96
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -33.04
+      value: 187.64
       objectReference: {fileID: 0}
     - target: {fileID: 6144156705266070041, guid: f72f63d14859d38458ea8931f6bad998, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27682,6 +27690,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2261503673709705813, guid: f082592d55ec10b4ebb734f0427aabdd, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2789118358066529305, guid: f082592d55ec10b4ebb734f0427aabdd, type: 3}
       propertyPath: m_Name
       value: StalkerJB
