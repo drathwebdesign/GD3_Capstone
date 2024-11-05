@@ -36,6 +36,7 @@ public class PlayerSFX : MonoBehaviour
     [SerializeField] AudioClip cabinNarration1;
 
     [SerializeField] AudioClip houseNarration1;
+    [SerializeField] AudioClip ridOfThisCurse;
     [SerializeField] AudioClip houseNarrationFinal;
 
     [SerializeField] AudioClip pianoMusic;
@@ -182,23 +183,23 @@ public class PlayerSFX : MonoBehaviour
 
         //graveyard triggers
 
-        if (other.transform.name == "GraveyardTrigger" && cabinProgress == 0)
-        {
-            if (graveyardProgress == 0)
-            {
-                SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration1, transform, 1f);
-                graveyardProgress++;
-            }
-        }
-
         if (other.transform.name == "GraveyardTrigger")
         {
-            if (graveyardProgress >0 && cabinProgress>0)
+            if (graveyardProgress == 0)
             {
                 SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration2, transform, 1f);
                 graveyardProgress++;
             }
         }
+
+ //       if (other.transform.name == "GraveyardTrigger")
+//        {
+ //           if (graveyardProgress >0 && cabinProgress>0)
+ //           {
+ //               SoundFXManager.Instance.PlaySoundFXClip(0, graveyardNarration1, transform, 1f);
+ //               graveyardProgress++;
+ //           }
+ //       }
 
         // church triggers
 
@@ -231,7 +232,11 @@ public class PlayerSFX : MonoBehaviour
             {
                 SoundFXManager.Instance.PlaySoundFXClip(0,houseNarration1, transform, 1f);
                 houseProgress++;
-            }         
+            }
+            if (houseProgress == 1 && mannequinProgress > 0)
+            {
+                SoundFXManager.Instance.PlaySoundFXClip(1, ridOfThisCurse, transform, VolumeQuiet);
+            }
 
         }
 
